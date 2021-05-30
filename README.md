@@ -37,6 +37,10 @@ Installation:
 
 ![Просмотр папок с записями](Screenshots/image_2021_05_30T07_36_48_243Z.png?raw=true)  
 
-
 ![Просмотр видео записей за сутки](Screenshots/image_2021_05_30T07_37_52_174Z.png?raw=true)  
 
+![Просмотр сведений о камере](Screenshots/image_2021_05_30T07_38_32_727Z.png?raw=true)  
+
+![Просмотр основных настроек](Screenshots/image_2021_05_30T07_39_06_740Z.png?raw=true)  
+
+![Просмотр дполнительных настроек](Screenshots/image_2021_05_30T07_39_26_478Z.png?raw=true)
