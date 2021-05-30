@@ -24,4 +24,13 @@ HTTP-сервер позволяет:
 - updatepatch
 - local_update.conf
 - patch_reuse
-3. Вставить карту в камеру и включить её... ждать пару минут. Камера должна перезагрузится. После чего можно заходить с помощью обозревателя интернета на адрес камеры.
+3. Вставить карту в камеру и включить её... ждать пару минут. Камера должна перезагрузится. После чего можно заходить с помощью обозревателя интернета на адрес камеры.  
+
+Installation:
+1. Format the sd card to FAT32.
+2. Write to the root of the map the contents of the archive as part of:
+- ark-add-on
+- updatepatch
+- local_update.conf
+- patch_reuse
+3. Insert the card into the camera and turn it on... wait a couple of minutes. The camera should reboot. After that, you can use the Internet browser to access the address of the camera.
