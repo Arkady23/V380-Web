@@ -28,7 +28,7 @@ HTTP-сервер позволяет:
 
 Installation:
 1. Format the sd card to FAT32.
-2. Write to the root of the map the contents of the archive as part of:
+2. Write to the root of the sd-card the contents of the archive as part of:
 - ark-add-on
 - updatepatch
 - local_update.conf
