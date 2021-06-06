@@ -35,6 +35,13 @@ Installation:
 - patch_reuse
 3. Insert the card into the camera and turn it on... wait a couple of minutes. The camera should reboot. After that, you can use the Internet browser to access the address of the camera.  
 
+Таблица определения модели камеры V380
+| Camera | Оборудование / Hw-префикс | Модель / HwName | Примечание |
+| --- | --- | --- | --- |
+| V380 GSM | - | GM35SCOMMON_V2 | - |
+| V380 mini | V380E12_WF3_PCARD | V380E2_C2 | - |
+| V380 ... | - | - | - |
+
 ![Просмотр папок с записями](Screenshots/image_2021_05_30T07_36_48_243Z.png?raw=true)  
 
 ![Просмотр видео записей за сутки](Screenshots/image_2021_05_30T07_37_52_174Z.png?raw=true)  
