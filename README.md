@@ -1,5 +1,5 @@
 # V380-Web
-Web server for ip cameras V380.  
+Web server for ip cameras V380. Russian and English interfaces are supported.  
 
 The HTTP server allows you to:
 - perform all sorts of manipulations with the records on the sd card. Now you do not need to take it out of the camera every time;
