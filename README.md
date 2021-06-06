@@ -36,6 +36,7 @@ HTTP-сервер позволяет:
 - patch_reuse
 3. Вставить карту в камеру и включить её... ждать пару минут. Камера должна перезагрузится. После чего можно заходить с помощью обозревателя интернета на адрес камеры. 
    
+   
 Installation:
 1. Format the sd card to FAT32.
 2. Write to the root of the sd-card the contents of the archive as part of:
