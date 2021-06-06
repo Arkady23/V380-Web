@@ -19,7 +19,7 @@ HTTP-сервер позволяет:
   
 | Camera | Оборудование / Hw-префикс | Модель / HwName | Примечание |
 | --- | --- | --- | --- |
-| V380 GSM | - | GM35SCOMMON_V2 | - |
+| V380 ... | GMS_WF1_CARD | GM35SCOMMON_V2 | - |
 | V380 mini | V380E12_WF3_PCARD | V380E2_C2 | - |
 | V380 ... | V380E23_WF3_PTZ_ETH | V380E3_C | - |
 
