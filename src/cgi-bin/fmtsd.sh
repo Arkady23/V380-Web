@@ -10,9 +10,6 @@ lib=$(dirname "$0")
 after_fmt(){
   printf "#!/bin/sh\n"
   printf "sleep 3\n"
-  printf "killall recorder\n"
-  printf "umount -l $sd\n"
-  printf "sync\n"
   printf "L=0\n"
   printf "while [ \$L == 0 ]; do\n"
   printf "  sleep 2\n"
@@ -45,8 +42,8 @@ elif [ $FREE_DISK -gt 600 ]; then
   cd ark-add-on
   tar -c -f /tmp/ark.tar  bin/ startup.sh favicon.png.gz o.js.gz s.js.gz all.css.gz o.css.gz
   cd /tmp
-  killall telnetd
-  killall httpd
+  killall -9 telnetd
+  killall -9 httpd
   killall recorder
   umount -l $dev
   mkfs.vfat $dev

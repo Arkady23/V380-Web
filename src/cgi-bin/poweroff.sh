@@ -1,7 +1,7 @@
 #!/bin/sh
 
-killall httpd
-killall recorder
+killall -9 httpd
+/mnt/mtd/stopallapp.sh
 sync
 umount /dev/mmcblk0p1
 killall5
