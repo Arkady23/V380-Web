@@ -17,6 +17,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 | --- | --- | --- | --- |
 | V380 ... | GMS_WF1_CARD | GM35SCOMMON_V2 |  |
 | V380 mini | V380E12_WF3_PCARD | V380E2_C2 |  |
+| V380 miсro | V380E12_WF3_AK_MINI |  |  |
 | V380 ... | V380E21_WF3_PTZ_ETH | V380E3_C3 |  |
 | V380 ... | V380E21_WF5_PTZ_WIFI | V380E3_C5 |  |
 | V380 ... | V380E23_WF3_PTZ_ETH | V380E3_C |  |
