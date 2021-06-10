@@ -25,15 +25,24 @@ get_1(){
 	printf "\t%s" "$V"
   fi
 }
-get_app(){
-  add=/mnt/sdcard/ark-add-on
-  if [ -f "$add/opts.ini" ]; then
-	app=$(cat $add/opts.ini | lot word app =)
-  else
-	printf "%s\n" "app=MPC" > $add/opts.ini
-	app=MPC
+get_1s(){
+  V=0
+  N_3=$(printf "%s" "$sta" | sed -n "/$1/=")
+  if [ $N_3 -ge 1 ]; then
+	local S=$(printf "%s" "$sta" | sed -n "${N_3} s/$1/$1/p")
+	if [ "${S:0:1}" != '#' ]; then V=1; fi
   fi
-  printf "$app"
+  printf "%s" "$V"
+}
+get_opt(){
+  add=/mnt/sdcard/ark-add-on
+  if [ ! -f "$add/opts.ini" ]; then
+	printf "%s\n" "app=MPC" > $add/opts.ini
+	sync
+  fi
+  opt=$(cat $add/opts.ini | lot word $1 =)
+  if [ $? == 0 ]; then opt=0; fi
+  printf "$opt"
 }
 
-printf "\t%s\t%s\t%s\t%s" "$(get_param CONST_PARAM rtsp)" "$(get_1 telnetd)" "$(get_app)" "$(get_1 httpd)"
+printf "\t%s\t%s\t%s\t%s\t%s" "$(get_param CONST_PARAM rtsp)" "$(get_1 telnetd)" "$(get_opt app)" "$(get_1s offline.sh)" "$(get_1 httpd)"

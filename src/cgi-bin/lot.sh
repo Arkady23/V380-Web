@@ -52,7 +52,10 @@ lot(){
 		word=$(printf $REPLY)
 	fi
 	if [ $EF != 0 ]; then
-		L=1
+		if [ $L == 0 ]; then
+			L=1
+			N=0
+		fi
 	fi
   done
 
