@@ -21,7 +21,7 @@ N_2=$(($N_1+$N_3))
 lin=""
 
 get_param(){
-  printf "%s" "$txt" | sed -n "${N_1},${N_2} s/$1/$1/p" | cut -d "=" -f2
+  printf "%s" "$txt" | sed -n "${N_1},${N_2} s/$1/$1/p" | lot word =
 }
 SAVE_01(){
   if [ $2 == 1 ]; then V=1; else V=0; fi

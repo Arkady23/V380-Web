@@ -73,8 +73,7 @@ fi
 
 ip=$(ifconfig wlan0 | lot word "inet addr:")
 fn=${QUERY_STRING}_${ip}.$f
-fl=$add/plists/$fn
-mkdir -p $add/plists
+fl=/tmp/$fn
 > $fl
 c_plist >> $fl
 
@@ -82,3 +81,4 @@ printf "Content-Type: text/plain\r\n"
 printf "Content-Disposition: attachment; filename=\"${fn}\"\r\n"
 printf "Content-Length: `wc -c < $fl`\r\n\r\n"
 cat $fl
+rm $fl
