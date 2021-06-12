@@ -13,11 +13,11 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 - производить запуск служб (RTSP, telnet, HTTP);
 - перезагружать и безопасно завершать работу камеры перед отключением питания.
 ### Таблица определения модели камеры V380
-| Camera | Оборудование / Hwprefix | Модель / Hwname | Примечание |
+| Camera | Оборудование / Hwprefix | Модель / Hwname | Установщик / Installer |
 | --- | --- | --- | --- |
 | V380 ... | HwGMS_WF1_CARD | GM35SCOMMON_V2 |  |
 | V380 ... | HwV380E2_WF1_PTZ |  |  |
-| V380 mini | HwV380E12_WF3_PCARD | V380E2_C2 |  |
+| V380 mini | HwV380E12_WF3_PCARD | V380E2_C2 | httpd_V380E2_C2_v20210530.zip |
 | V380 mini | HwV380E12_WF3_AK_MINI | V380E2_CA? |  |
 | V380 ... | HwV380E21_WF3_PTZ_ETH | V380E3_C3? |  |
 | V380 ... | HwV380E21_WF5_PTZ_WIFI | V380E3_C5 |  |
