@@ -15,7 +15,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 ### Таблица определения модели камеры V380
 | Camera | Оборудование / Hwprefix | Модель / Hwname | Установщик / Installer |
 | --- | --- | --- | --- |
-| V380 ... | HwGMS_WF1_CARD | GM35SCOMMON_V2 |  |
+| V380 ... | HwGMS_WF1_CARD | GM35SCOMMON_V2 | httpd_GM35SCOMMON_V2_v20210530.zip |
 | V380 ... | HwV380E2_WF1_PTZ |  |  |
 | V380 mini | HwV380E12_WF3_PCARD | V380E2_C2 | httpd_V380E2_C2_v20210530.zip |
 | [V380 mini](https://aliexpress.ru/item/4000944546368.html) | HwV380E12_WF3_AK_MINI | V380E2_C2#YW | httpd_V380E2_C2.YW_v20210614.zip |
