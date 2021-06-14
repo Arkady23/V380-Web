@@ -26,7 +26,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 Для каждой модели камеры с разными Hwname (он же Soft-id) свой установщик. Вы должны знать этот код. Но если ошибетесь — ничего страшного... патч будет игнорирован. Никаких изменений в камере не производится. Только обеспечивается запуск командного файла на sd в папке ark-add-on — startup.sh, если этот запускной файл есть на карте. Ваша базовая прошивка может быть самой последней. Вся установка происходит на sd-карту. Если после установки очистить или вынуть sd, то камера будет работать в обычном режиме, как работала до установки. Для подготовки установщика к новым моделям — сообщите её Hwprefix и Hwname. Узнать Hwname можно по трафику с камеры в момент захода на смартфоне в пункт "версия прошивки". Также можно определить Hwname, если взять скриншот с экрана смартфона при отображении информации о выходе новой прошивки по её идентификатору.
 ### Установка
 1. Отформатировать sd-карту в FAT32.
-2. Записать в корень карты содержимое архива в составе:
+2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/tag/20210530) в составе:
 - ark-add-on
 - updatepatch
 - local_update.conf
@@ -34,7 +34,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 3. Вставить карту в камеру и включить её... ждать пару минут. Камера должна перезагрузится. После чего можно заходить с помощью обозревателя интернета на адрес камеры. 
 ### Installation
 1. Format the sd card to FAT32.
-2. Write to the root of the sd-card the contents of the archive as part of:
+2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/tag/20210530) as part of:
 - ark-add-on
 - updatepatch
 - local_update.conf
