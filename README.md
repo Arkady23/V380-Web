@@ -15,14 +15,15 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 ### Таблица определения модели камеры V380
 | Camera | Оборудование / Hwprefix | Модель / Hwname | Установщик / Installer |
 | --- | --- | --- | --- |
-| V380 ... | HwGMS_WF1_CARD | GM35SCOMMON_V2 | httpd_GM35SCOMMON_V2_v20210530.zip |
+| V380 | HwGMS_WF1_CARD | GM35SCOMMON_V2 | httpd_GM35SCOMMON_V2_v20210530.zip |
 | [V380 HD 720P](https://aliexpress.ru/item/33010593004.html) | HwV380E2_WF1_PTZ | V380E_C2 | httpd_V380E_C2_v20210614.zip |
 | V380 mini | HwV380E12_WF3_PCARD | V380E2_C2 | httpd_V380E2_C2_v20210530.zip |
 | [V380 mini](https://aliexpress.ru/item/4000944546368.html) | HwV380E12_WF3_AK_MINI | V380E2_C2#YW | httpd_V380E2_C2.YW_v20210614.zip |
-| V380 ... | HwV380E21_WF3_PTZ_ETH | V380E3_C3? |  |
-| V380 ... | HwV380E21_WF5_PTZ_WIFI | V380E3_C5 | httpd_V380E3_C5_v20210607.zip |
+| V380 | HwV380E13_WF3_PTZ |  |  |
+| V380 | HwV380E21_WF3_PTZ_ETH | V380E3_C3? |  |
+| V380 | HwV380E21_WF5_PTZ_WIFI | V380E3_C5 | httpd_V380E3_C5_v20210607.zip |
 | V380 Door Eye | V380E22_WF3_MINI_Q7 | V380E3_C5#YW? | httpd_V380E3_C5.YW_v20210614.zip? |
-| V380 ... | HwV380E23_WF3_PTZ_ETH | V380E3_C? |  |
+| V380 | HwV380E23_WF3_PTZ_ETH | V380E3_C? |  |
 
 Для каждой модели камеры с разными Hwname (он же Soft-id) свой установщик. Вы должны знать этот код. Но если ошибетесь — ничего страшного... патч будет игнорирован. Никаких изменений в камере не производится. Только обеспечивается запуск командного файла на sd в папке ark-add-on — startup.sh, если этот запускной файл есть на карте. Ваша базовая прошивка может быть самой последней. Вся установка происходит на sd-карту. Если после установки очистить или вынуть sd, то камера будет работать в обычном режиме, как работала до установки. Для подготовки установщика к новым моделям — сообщите её Hwprefix и Hwname. Узнать Hwname можно по трафику с камеры в момент захода на смартфоне в пункт "версия прошивки". Также можно определить Hwname, если взять скриншот с экрана смартфона при отображении информации о выходе новой прошивки по её идентификатору.
 ### Установка
