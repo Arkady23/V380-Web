@@ -20,7 +20,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 | V380 mini | HwV380E12_WF3_PCARD | V380E2_C2 | httpd_V380E2_C2_v20210530.zip |
 | [V380 mini](https://aliexpress.ru/item/4000944546368.html) | HwV380E12_WF3_AK_MINI | V380E2_C2#YW | httpd_V380E2_C2.YW_v20210614.zip |
 | V380 | HwV380E13_WF3_PTZ | V380E2_CA | httpd_V380E2_CA_v20210612.zip |
-| V380 | HwV380E21_WF3_PTZ_ETH | V380E3_C3 | httpd_V380E3_C3_v20210606.zip |
+| V380 | HwV380E21_WF3_PTZ_ETH | V380E3_C3 | httpd_V380E3_C3_3020607_v20210620.zip |
 | V380 | HwV380E21_WF5_PTZ_WIFI | V380E3_C5 | httpd_V380E3_C5_v20210607.zip |
 | V380 Door Eye | V380E22_WF3_MINI_Q7 | V380E3_C5#YW | httpd_V380E3_C5.YW_v20210617.zip |
 | V380 | HwV380E23_WF3_PTZ_ETH | V380E3_C? |  |
