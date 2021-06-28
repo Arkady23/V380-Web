@@ -45,4 +45,4 @@ get_opt(){
   printf "$opt"
 }
 
-printf "\t%s\t%s\t%s\t%s\t%s" "$(get_param CONST_PARAM rtsp)" "$(get_1 telnetd)" "$(get_opt app)" "$(get_1s offline.sh)" "$(get_1 httpd)"
+printf "\t%s\t%s\t%s\t%s\t%s" "$(get_param CONST_PARAM rtsp)" "$(get_1s 'telnetd -l')" "$(get_opt app)" "$(get_1s offline.sh)" "$(get_1 httpd)"

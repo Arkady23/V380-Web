@@ -25,8 +25,13 @@ get_param(){
 }
 SAVE_01(){
   if [ $2 == 1 ]; then V=1; else V=0; fi
-  if [ $(get_param rtsp) != "$V" ] ; then
-	sed -i "${N_1},${N_2} s/^\($1\s*=\s*\).*$/\1$V/" $fl
+  par=$(get_param $1)
+  if [ "$par" != "$V" ]; then
+	if [ -z "$par" ]; then
+		sed -i "${N_2} s/\[/$1=$V\n&/" $fl
+	else
+		sed -i "${N_1},${N_2} s/^\($1\s*=\s*\).*$/\1$V/" $fl
+	fi
   fi
 }
 SAVE_1(){
@@ -44,7 +49,7 @@ SAVE_1(){
   else
 	if [ "$2" == "1" ]; then
 		case $1 in
-			"offline.sh")	printf "%s\n" " \$sd/cgi-bin/$1 &" >> $fl ;;
+			"offline.sh")	printf "%s\n" " \$sd/cgi-bin/$1 5 &" >> $fl ;;
 			*) ;;
 		esac
 	fi
@@ -68,7 +73,7 @@ SAVE_opt(){
 
  fl=$add/startup.sh
  txt=$(cat $fl)
- SAVE_1 telnetd ${QUERY_STRING:1:1}
+ SAVE_1 "telnetd -l" ${QUERY_STRING:1:1}
 
  fo=$add/opts.ini
  opts=$(cat $fo)
