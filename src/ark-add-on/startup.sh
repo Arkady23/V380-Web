@@ -1,4 +1,5 @@
 #!/bin/sh
  sd=/mnt/sdcard
-# telnetd -l /bin/sh &
- $sd/ark-add-on/bin/httpd -p 80 -h $sd &
+ killall -9 telnetd
+ telnetd -l /bin/sh &
+ $sd/bin/httpd -p 80 -h $sd &
