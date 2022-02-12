@@ -22,7 +22,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 | V380 | HwV380E12_WF3_PTZ<br>HwV380E13_WF3_PTZ | V380E2_CA | [httpd_V380E2_CA_v20210620.zip](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_V380E2_CA_9090909_v20210620.zip) |
 | V380 | HwV380E21_WF3_PTZ_ETH | V380E3_C3 | [httpd_V380E3_C3_v20210620.zip](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_V380E3_C3_9090909_v20210620.zip) |
 | V380 | HwV380E21_WF5_PTZ_WIFI<br>HwV380E21_WF6_PTZ_WIFI | V380E3_C5 | httpd_V380E3_C5_v20210607.zip |
-| V380 Door Eye | HwV380E22_WF3_MINI_Q7 | V380E3_C5#YW | httpd_V380E3_C5.YW_v20210617.zip |
+| V380 Door Eye | HwV380E22_WF3_MINI_Q7 | V380E3_C5#YW | [httpd_V380E3_C5.YW_v20210620.zip](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_V380E3_C5.YW_9090909_v20210620.zip) |
 | [V380](https://aliexpress.ru/item/4001089979397.html) |  | JL_A9C | [httpd_JL_A9C_v20210620.zip](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_JL_A9C_9090909_v20210620.zip) |
 | V380 | HwV380E23_WF3_IPC_ETH | V380E3_CA | [httpd_V380E3_CA_v20210620.zip](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_V380E3_CA_9090909_v20210620.zip) |
 | V380 | HwV380E31_WF3_IPC60_ETH | V380E4_C3 | [httpd_V380E4_C3_v20210620.zip](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_V380E4_C3_9090909_v20210620.zip) |
