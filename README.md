@@ -39,6 +39,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 - patch_reuse
 3. Вставить карту в камеру и включить её... ждать пару минут. Камера должна перезагрузится. После чего можно заходить с помощью обозревателя интернета на адрес камеры. 
 ### Installation
+#### For cameras with firmware version before 2019
 1. Format the sd card to FAT32 ([Here this program](http://ridgecrop.co.uk/index.htm?guiformat.htm) is suitable).
 2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/tag/20210530) as part of:
 - ark-add-on
