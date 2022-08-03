@@ -15,7 +15,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 ### Таблица определения модели камеры V380
 | Camera | Оборудование / Hwprefix | Модель / Hwname | Установщик / Installer |
 | --- | --- | --- | --- |
-| V380 | Любая камера | установка вручную | [httpd_V380_after_2019.zip](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_V380_after_2019_v20210620.zip) |
+| V380 | Любая камера<br>Any camera | установка вручную<br>manual setup | [httpd_V380_after_2019.zip](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_V380_any_manual_v20210620.zip) |
 | V380 | HwGMS_WF1_CARD | GM35SCOMMON_V2 | [httpd_GM35SCOMMON_V2.zip](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_GM35SCOMMON_V2_9090909_v20210620.zip) |
 | [V380 HD 720P](https://aliexpress.ru/item/33010593004.html) | HwV380E2_WF1_PTZ | V380E_C2 | [httpd_V380E_C2.zip](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_V380E_C2_9090909_v20210620.zip) |
 | V380 | HwV380E11_WF3_IPC38_ETH<br>HwV380E11_WF9_IPC38_ETH<br>HwV380E12_WF3_PCARD<br>HwV380E12_WF9_PTZ | V380E2_C2 | [httpd_V380E2_C2.zip](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_V380E2_C2_9090909_v20210620.zip) |
