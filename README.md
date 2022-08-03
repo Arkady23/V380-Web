@@ -39,12 +39,16 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 - patch_reuse
 3. Вставить карту в камеру и включить её... ждать пару минут. Камера должна перезагрузится. После чего можно заходить с помощью обозревателя интернета на адрес камеры. 
 #### Для камер с версиями прошивок после 2019 года
-2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/tag/20210530) в составе:
+2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_V380_after_2019_v20210620.zip) в составе:
 - ark-add-on
 - quick_check.ini
 - exshell_bfu.sh
 3. Вставить карту в камеру и включить её... ждать пару минут. Камера включется с запущенным сервером telnet. После чего нужно зайти через telnet по адресу камеры (логин root, пароль посмотреть в файле quick_check.ini).
-4. Ввести команду: /mnt/sdcard/exshell_bfu.sh
+4. Ввести команды через telnet:
+    /mnt/sdcard/exshell_bfu.sh
+    sync
+    reboot
+5. Камера должна перезагрузится. После чего можно заходить с помощью обозревателя интернета на адрес камеры. 
 ### Installation
 #### For cameras with firmware versions up to 2019
 1. Format the sd card to FAT32 ([Here this program](http://ridgecrop.co.uk/index.htm?guiformat.htm) is suitable).
