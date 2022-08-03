@@ -39,7 +39,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 - local_update.conf
 - patch_reuse
 3. Вставить карту в камеру и включить её... ждать пару минут. Камера должна перезагрузится. После чего можно заходить с помощью обозревателя интернета на адрес камеры. 
-#### Для камер с версиями прошивок после 2019 года
+#### Для камер с версиями прошивок после 2019 года (установка вручную)
 2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_V380_after_2019_v20210620.zip) в составе:
 - ark-add-on
 - quick_check.ini
@@ -59,7 +59,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 - local_update.conf
 - patch_reuse
 3. Insert the card into the camera and turn it on... wait a couple of minutes. The camera should reboot. After that, you can use the Internet browser to access the address of the camera.  
-#### For cameras with firmware versions after 2019
+#### For cameras with firmware versions after 2019 (manual setup)
 2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_V380_after_2019_v20210620.zip) as part of:
 - ark-add-on
 - quick_check.ini
