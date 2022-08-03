@@ -4,13 +4,13 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 - perform all sorts of manipulations with the records on the sd card. Now you do not need to take it out of the camera every time;
 - watch the video archive on sd online without removing the card;
 - display camera information;
-- launch services (RTSP, telnet, HTTP);
+- launch services (RTSP, telnet, HTTP, ftp);
 - restart and safely shut down the camera before turning off the power.  
 ### HTTP-сервер позволяет
 - производить всевозможные манипуляции с записями на sd-карте. Теперь вынимать её из камеры каждый раз вам нет необходимости;
 - смотреть видео-архив на sd онлайн, не вынимая карты;
 - отображать сведения о камере;
-- производить запуск служб (RTSP, telnet, HTTP);
+- производить запуск служб (RTSP, telnet, HTTP, ftp);
 - перезагружать и безопасно завершать работу камеры перед отключением питания.
 ### Таблица определения модели камеры V380
 | Camera | Оборудование / Hwprefix | Модель / Hwname | Установщик / Installer |
