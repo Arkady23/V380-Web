@@ -45,10 +45,8 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 - quick_check.ini
 - setup.sh
 3. Вставить карту в камеру и включить её... ждать пару минут. Камера включется с запущенным сервером telnet. После чего нужно зайти через telnet по адресу камеры (логин root, пароль посмотреть в файле quick_check.ini).
-4. Ввести команды через telnet:<br>
-    /mnt/sdcard/setup.sh<br>
-    sync<br>
-    reboot
+4. Ввести команду через telnet:<br>
+    /mnt/sdcard/setup.sh
 5. Камера должна перезагрузится. После чего можно заходить с помощью обозревателя интернета на адрес камеры. 
 ### Installation
 1. Format the sd card to FAT32 ([Here this program](http://ridgecrop.co.uk/index.htm?guiformat.htm) is suitable).
