@@ -46,7 +46,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 - exshell_bfu.sh
 3. Вставить карту в камеру и включить её... ждать пару минут. Камера включется с запущенным сервером telnet. После чего нужно зайти через telnet по адресу камеры (логин root, пароль посмотреть в файле quick_check.ini).
 4. Ввести команды через telnet:<br>
-    /mnt/sdcard/exshell_bfu.sh<br>
+    /mnt/sdcard/setup.sh<br>
     sync<br>
     reboot
 5. Камера должна перезагрузится. После чего можно заходить с помощью обозревателя интернета на адрес камеры. 
