@@ -61,12 +61,10 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_V380_after_2019_v20210620.zip) as part of:
 - ark-add-on
 - quick_check.ini
-- exshell_bfu.sh
+- setup.sh
 3. Insert the card into the camera and turn it on... wait a couple of minutes. The camera turns on with the telnet server running. After that, you need to log in via telnet to the camera address (login root, password look in the file quick_check.in).
 4. Enter commands via telnet:<br>
-    /mnt/sdcard/exshell_bfu.sh<br>
-    sync<br>
-    reboot
+    /mnt/sdcard/setup.sh<br>
 5. The camera should reboot. After that, you can use the Internet browser to access the address of the camera. 
 
 ![Просмотр папок с записями](Screenshots/image_2021_05_30T07_36_48_243Z.png?raw=true)  
