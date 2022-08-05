@@ -32,13 +32,6 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 Для каждой модели камеры с разными Hwname (он же Soft-id) свой установщик. Вы должны знать этот код (или можете использовать вариант установки вручную на любую модель камеры V380), а в некоторых случаях и 7-и значный номер версии прошивки (последнего патча). Но если ошибетесь — ничего страшного... патч будет игнорирован. Никаких изменений в камере не производится. Только обеспечивается запуск командного файла на sd в папке ark-add-on — startup.sh, если этот запускной файл есть на карте. Ваша базовая прошивка может быть самой последней. Вся установка происходит на sd-карту. Если после установки очистить или вынуть sd, то камера будет работать в обычном режиме, как работала до установки. Для подготовки установщика к новым моделям — сообщите её Hwprefix, Hwname и 7-и значный номер версии прошивки. Узнать Hwname и версию можно по трафику с камеры в момент захода на смартфоне в пункт "версия прошивки". Также эту информацию можно увидеть в протоколе загрузки, если вы сможете подключить камеру к последовательному порту. Хорошим способом является обращение в поддержку v380technical(собака)gmail.com для получения последнего обновления от производителя. Последнее обновление можно также скачать самостоятельно с официального ресурса http://update2017.oss-accelerate.aliyuncs.com/..., но для каждой модели своя url-строка и уточнить её опять таки можно только сняв трафик с камеры. Можно определить Hwname, если взять скриншот с экрана смартфона при отображении информации о выходе новой прошивки по её идентификатору. Обучающий ролик, как поймать трафик с камеры https://youtu.be/GLYqb2cC4y0.
 ### Установка
 1. Отформатировать sd-карту в FAT32 ([Вот эта программа](http://ridgecrop.co.uk/index.htm?guiformat.htm) подходит).
-#### Для камер с версиями прошивок до 2019 года
-2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/tag/20210530) в составе:
-- ark-add-on
-- updatepatch
-- local_update.conf
-- patch_reuse
-3. Вставить карту в камеру и включить её... ждать пару минут. Камера должна перезагрузится. После чего можно заходить с помощью обозревателя интернета на адрес камеры. 
 #### Для камер с версиями прошивок после 2019 года (установка вручную)
 2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_V380_any_manual_v20210620.zip) в составе:
 - ark-add-on
@@ -48,15 +41,15 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 4. Ввести команду через telnet:<br>
     /mnt/sdcard/setup.sh
 5. Камера должна перезагрузится. После чего можно заходить с помощью обозревателя интернета на адрес камеры. 
-### Installation
-1. Format the sd card to FAT32 ([Here this program](http://ridgecrop.co.uk/index.htm?guiformat.htm) is suitable).
-#### For cameras with firmware versions up to 2019
-2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/tag/20210530) as part of:
+#### Для камер с версиями прошивок до 2019 года
+2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/tag/20210530) в составе:
 - ark-add-on
 - updatepatch
 - local_update.conf
 - patch_reuse
-3. Insert the card into the camera and turn it on... wait a couple of minutes. The camera should reboot. After that, you can use the Internet browser to access the address of the camera.  
+3. Вставить карту в камеру и включить её... ждать пару минут. Камера должна перезагрузится. После чего можно заходить с помощью обозревателя интернета на адрес камеры. 
+### Installation
+1. Format the sd card to FAT32 ([Here this program](http://ridgecrop.co.uk/index.htm?guiformat.htm) is suitable).
 #### For cameras with firmware versions after 2019 (manual setup)
 2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_V380_any_manual_v20210620.zip) as part of:
 - ark-add-on
@@ -66,6 +59,13 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 4. Enter commands via telnet:<br>
     /mnt/sdcard/setup.sh<br>
 5. The camera should reboot. After that, you can use the Internet browser to access the address of the camera. 
+#### For cameras with firmware versions up to 2019
+2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/tag/20210530) as part of:
+- ark-add-on
+- updatepatch
+- local_update.conf
+- patch_reuse
+3. Insert the card into the camera and turn it on... wait a couple of minutes. The camera should reboot. After that, you can use the Internet browser to access the address of the camera.  
 
 ![Просмотр папок с записями](Screenshots/image_2021_05_30T07_36_48_243Z.png?raw=true)  
 
