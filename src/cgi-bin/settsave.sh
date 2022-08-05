@@ -73,7 +73,7 @@ SAVE_opt(){
 
  fl=$add/startup.sh
  txt=$(cat $fl)
- SAVE_1 "telnetd -l" ${QUERY_STRING:1:1}
+ SAVE_1 "telnetd " ${QUERY_STRING:1:1}
 
  fo=$add/opts.ini
  opts=$(cat $fo)
@@ -81,17 +81,18 @@ SAVE_opt(){
 
  SAVE_1 offline.sh ${QUERY_STRING:5:1}
 
- SAVE_1 httpd ${QUERY_STRING:6:1}
+ SAVE_1 " ftpd " ${QUERY_STRING:6:1}
+
+ SAVE_1 httpd ${QUERY_STRING:7:1}
  port=$(printf "%s" "$lin" | lot word -p)
- N_3=$?
  if [ $N_3 -gt 1 ]; then
-	V=${QUERY_STRING:7}
+	V=${QUERY_STRING:8}
 	if [ $V -lt 1 ]; then
 		V=80
 	elif [ $V -gt 65535 ]; then
 		V=80
 	fi
 	if [ $V != $port ]; then
-		sed -i "${N_3} s/$port/${QUERY_STRING:3}/" $fl
+		sed -i "${N_3} s/$port/$V/" $fl
 	fi
  fi

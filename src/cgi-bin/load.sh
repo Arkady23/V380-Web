@@ -9,6 +9,6 @@ if [ -f "update" ]; then
   tar -x -f update update.sh
   sync
   if [ -f "update.sh" ]; then
-	sed -i "/httpd\ /i \ \$sd\/ark-add-on\/update.sh" startup.sh
+	sed -i "/httpd\ /i \ \$sd\/ark-add-on\/update.sh update" startup.sh
   fi
 fi
