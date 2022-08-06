@@ -33,7 +33,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 ### Установка
 1. Отформатировать sd-карту в FAT32 ([Вот эта программа](http://ridgecrop.co.uk/index.htm?guiformat.htm) подходит).
 #### Для камер с версиями прошивок после 2019 года (установка вручную)
-2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_V380_any_manual_v20210620.zip) в составе:
+2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380_any_manual_v20220805.zip) в составе:
 - ark-add-on
 - quick_check.ini
 - setup.sh
@@ -51,7 +51,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 ### Installation
 1. Format the sd card to FAT32 ([Here this program](http://ridgecrop.co.uk/index.htm?guiformat.htm) is suitable).
 #### For cameras with firmware versions after 2019 (manual setup)
-2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/download/20210530/httpd_V380_any_manual_v20210620.zip) as part of:
+2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380_any_manual_v20220805.zip) as part of:
 - ark-add-on
 - quick_check.ini
 - setup.sh
