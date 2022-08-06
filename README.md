@@ -42,7 +42,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
     /mnt/sdcard/setup.sh
 5. Камера должна перезагрузится. После чего можно заходить с помощью обозревателя интернета на адрес камеры. 
 #### Для камер с версиями прошивок до 2019 года
-2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/tag/20210530) в составе:
+2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/tag/First-time-installer) в составе:
 - ark-add-on
 - updatepatch
 - local_update.conf
@@ -60,7 +60,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
     /mnt/sdcard/setup.sh<br>
 5. The camera should reboot. After that, you can use the Internet browser to access the address of the camera. 
 #### For cameras with firmware versions up to 2019
-2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/tag/20210530) as part of:
+2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/tag/First-time-installer) as part of:
 - ark-add-on
 - updatepatch
 - local_update.conf
