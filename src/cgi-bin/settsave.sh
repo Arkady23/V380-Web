@@ -59,7 +59,7 @@ SAVE_opt(){
   N_3=$(printf "%s" "$opts" | sed -n "/$1/=")
   if [ $N_3 -ge 1 ]; then
 	local old=$(printf "%s" "$opts" | sed -n "${N_3} s/$1/$1/p")
-	old=$(printf "${old#*=}" | read -r w1 w2; printf "$w1")
+	old=$(printf "${old#*=}" | (read -r w1 w2; printf "$w1"))
 	if [ $2 != $old ]; then
 		sed -i "${N_3} s/^\($1\s*=\s*\).*$/\1$2/" $fo
 	fi
