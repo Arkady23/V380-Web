@@ -3,12 +3,20 @@
 printf "Content-Type: text/html\r\n\r\n"
 printf "\t%s" "sett"
 
+bot=$(cat /mnt/mtd/vg_boot.sh)
 txt=$(cat /mnt/mtd/mvconf/factory_const.ini)
 sta=$(cat /mnt/sdcard/ark-add-on/startup.sh)
 lib=$(dirname "$0")
 
 . $lib/lot.sh
 
+get_boot(){
+  if [ -n "$2" ]; then
+	printf "%s" "$bot" | lot word $1 $2 =
+  else
+	printf "%s" "$bot" | lot word $1 =
+  fi
+}
 get_param(){
   if [ -n "$2" ]; then
 	printf "%s" "$txt" | lot word $1 $2 =
@@ -45,4 +53,4 @@ get_opt(){
   printf "$opt"
 }
 
-printf "\t%s\t%s\t%s\t%s\t%s\t%s" "$(get_param CONST_PARAM rtsp)" "$(get_1s 'telnetd ')" "$(get_opt app)" "$(get_1s offline.sh)" "$(get_1s ' ftpd ')" "$(get_1 httpd)"
+printf "\t%s" "$(get_param CONST_PARAM rtsp)" "$(get_1s 'telnetd ')" "$(get_1s ' ftpd ')" "$(get_boot export TZ)" "$(get_opt app)" "$(get_1s offline.sh)" "$(get_1 httpd)"

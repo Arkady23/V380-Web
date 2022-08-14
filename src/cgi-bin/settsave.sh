@@ -13,7 +13,9 @@ printf "\t%s" "settsave"
 
 fl=/mnt/mtd/mvconf/factory_const.ini
 add=/mnt/sdcard/ark-add-on
+boot=/mnt/mtd/vg_boot.sh
 txt=$(cat $fl)
+bot=$(cat $boot)
 N_1=$(printf "%s" "$txt" | sed -n "/\[CONST_PARAM\]/=")
 N_3=$(($N_1+1))
 N_3=$(printf "%s" "$txt" | sed -n "$N_3,\$p" | sed -n "/\[/=" | head -n 1)
@@ -23,6 +25,14 @@ lin=""
 get_param(){
   printf "%s" "$txt" | sed -n "${N_1},${N_2} s/$1/$1/p" | lot word =
 }
+CLR_ntp(){
+  fo=/mnt/mtd/mvconf/ntp.ini
+  opts=$(cat $fo)
+  N_3=$(printf "%s" "$opts" | sed -n "/$1=/=")
+  if [ $N_3 -ge 1 ]; then
+	sed -i "${N_3} s/.*/$1=0/" $fo
+  fi
+}
 SAVE_01(){
   if [ $2 == 1 ]; then V=1; else V=0; fi
   par=$(get_param $1)
@@ -30,8 +40,24 @@ SAVE_01(){
 	if [ -z "$par" ]; then
 		sed -i "${N_2} s/\[/$1=$V\n&/" $fl
 	else
-		sed -i "${N_1},${N_2} s/^\($1\s*=\s*\).*$/\1$V/" $fl
+		opts=$(printf "%s" "$txt" | sed -n ${N_1},${N_2}p)
+		N_3=$(printf "%s" "$opts" | sed -n "/$1/=")
+		sed -i "${N_3} s/\(\s*=\s*\).*$/\1$V/" $fl
 	fi
+  fi
+}
+SAVE_TZ(){
+  N_3=$(printf "%s" "$bot" | sed -n "/TZ/=")
+  if [ $N_3 -ge 1 ]; then
+	local old=$(printf "%s" "$bot" | sed -n "${N_3} s/TZ/TZ/p")
+	old=$(printf "${old#*=}" | (read -r w1 w2; printf "$w1"))
+	if [ $1 != $old ]; then
+		sed -i "${N_3} s/$old/\1$1/" $boot
+		CLR_ntp tz
+	fi
+  else
+	sed -i "3i export TZ=$1" $boot
+	CLR_ntp tz
   fi
 }
 SAVE_1(){
@@ -56,6 +82,8 @@ SAVE_1(){
   fi
 }
 SAVE_opt(){
+  fo=$add/opts.ini
+  opts=$(cat $fo)
   N_3=$(printf "%s" "$opts" | sed -n "/$1/=")
   if [ $N_3 -ge 1 ]; then
 	local old=$(printf "%s" "$opts" | sed -n "${N_3} s/$1/$1/p")
@@ -75,18 +103,20 @@ SAVE_opt(){
  txt=$(cat $fl)
  SAVE_1 "telnetd " ${QUERY_STRING:1:1}
 
- fo=$add/opts.ini
- opts=$(cat $fo)
- SAVE_opt app ${QUERY_STRING:2:3}
+ SAVE_1 " ftpd " ${QUERY_STRING:2:1}
 
- SAVE_1 offline.sh ${QUERY_STRING:5:1}
+ Q=${QUERY_STRING%+*}
+ SAVE_TZ ${Q:3}
+ Q=${QUERY_STRING#*+}
 
- SAVE_1 " ftpd " ${QUERY_STRING:6:1}
+ SAVE_opt app ${Q:0:3}
 
- SAVE_1 httpd ${QUERY_STRING:7:1}
+ SAVE_1 offline.sh ${Q:3:1}
+
+ SAVE_1 httpd ${Q:4:1}
  port=$(printf "%s" "$lin" | lot word -p)
  if [ $N_3 -gt 1 ]; then
-	V=${QUERY_STRING:8}
+	V=${Q:5}
 	if [ $V -lt 1 ]; then
 		V=80
 	elif [ $V -gt 65535 ]; then
