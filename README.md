@@ -17,15 +17,15 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 ### Таблица определения модели камеры V380
 | Camera | Оборудование / Hwprefix | Модель / Hwname | Установщик / Installer |
 | --- | --- | --- | --- |
-| V380 | Любая камера<br>Any camera | установка вручную<br>manual setup | [httpd_V380_any_manual.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380_any_manual_v20220805.zip) |
-| V380 | HwGMS_WF1_CARD | GM35SCOMMON_V2 | [httpd_GM35SCOMMON_V2.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_GM35SCOMMON_V2_9090909_v20220805.zip) |
-| [V380 HD 720P](https://aliexpress.ru/item/33010593004.html) | HwV380E2_WF1_PTZ | V380E_C2 | [httpd_V380E_C2.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380E_C2_9090909_v20220805.zip) |
-| V380 | HwV380E11_WF3_IPC38_ETH<br>HwV380E11_WF9_IPC38_ETH<br>HwV380E12_WF3_PCARD<br>HwV380E12_WF9_PTZ | V380E2_C2 | [httpd_V380E2_C2.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380E2_C2_9090909_v20220805.zip) |
-| [V380 mini](https://aliexpress.ru/item/4000944546368.html) | HwV380E12_WF3_AK_MINI<br>HwV380E12_WF6_AK_MINI | V380E2_C2#YW | [httpd_V380E2_C2.YW.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380E2_C2.YW_9090909_v20220805.zip) |
-| V380 | HwV380E12_WF3_PTZ<br>HwV380E13_WF3_PTZ | V380E2_CA | [httpd_V380E2_CA.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380E2_CA_9090909_v20220805.zip) |
-| V380 | HwV380E21_WF3_PTZ_ETH | V380E3_C3 | [httpd_V380E3_C3.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380E3_C3_9090909_v20220805.zip) |
-| V380 | HwV380E21_WF5_PTZ_WIFI<br>HwV380E21_WF6_PTZ_WIFI | V380E3_C5 | [httpd_V380E3_C5.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380E3_C5_9090909_v20220805.zip) |
-| V380 Door Eye | HwV380E22_WF3_MINI_Q7 | V380E3_C5#YW | [httpd_V380E3_C5.YW.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380E3_C5.YW_9090909_v20220805.zip) |
+| V380 | Любая камера<br>Any camera | установка вручную<br>manual setup | [httpd_V380_any_manual.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380_any_manual.zip) |
+| V380 | HwGMS_WF1_CARD | GM35SCOMMON_V2 | [httpd_GM35SCOMMON_V2.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_GM35SCOMMON_V2_9090909.zip) |
+| [V380 HD 720P](https://aliexpress.ru/item/33010593004.html) | HwV380E2_WF1_PTZ | V380E_C2 | [httpd_V380E_C2.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380E_C2_9090909.zip) |
+| V380 | HwV380E11_WF3_IPC38_ETH<br>HwV380E11_WF9_IPC38_ETH<br>HwV380E12_WF3_PCARD<br>HwV380E12_WF9_PTZ | V380E2_C2 | [httpd_V380E2_C2.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380E2_C2_9090909.zip) |
+| [V380 mini](https://aliexpress.ru/item/4000944546368.html) | HwV380E12_WF3_AK_MINI<br>HwV380E12_WF6_AK_MINI | V380E2_C2#YW | [httpd_V380E2_C2.YW.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380E2_C2.YW_9090909.zip) |
+| V380 | HwV380E12_WF3_PTZ<br>HwV380E13_WF3_PTZ | V380E2_CA | [httpd_V380E2_CA.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380E2_CA_9090909.zip) |
+| V380 | HwV380E21_WF3_PTZ_ETH | V380E3_C3 | [httpd_V380E3_C3.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380E3_C3_9090909.zip) |
+| V380 | HwV380E21_WF5_PTZ_WIFI<br>HwV380E21_WF6_PTZ_WIFI | V380E3_C5 | [httpd_V380E3_C5.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380E3_C5_9090909.zip) |
+| V380 Door Eye | HwV380E22_WF3_MINI_Q7 | V380E3_C5#YW | [httpd_V380E3_C5.YW.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380E3_C5.YW_9090909.zip) |
 | V380 | HwV380E21_WF3_PTZ_WIFI | V380E3_C6 | |
 | [V380](https://aliexpress.ru/item/4001018956901.html) | A9_J3 | JL_A9C | |
 | V380 | HwV380E23_WF3_IPC_ETH | V380E3_CA | |
@@ -35,7 +35,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 ### Установка
 1. Отформатировать sd-карту в FAT32 ([Вот эта программа](http://ridgecrop.co.uk/index.htm?guiformat.htm) подходит).
 #### Для камер с версиями прошивок после 2019 года (установка вручную)
-2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380_any_manual_v20220805.zip) в составе:
+2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380_any_manual.zip) в составе:
 - ark-add-on
 - quick_check.ini
 - setup.sh
@@ -53,7 +53,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 ### Installation
 1. Format the sd card to FAT32 ([Here this program](http://ridgecrop.co.uk/index.htm?guiformat.htm) is suitable).
 #### For cameras with firmware versions after 2019 (manual setup)
-2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380_any_manual_v20220805.zip) as part of:
+2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380_any_manual.zip) as part of:
 - ark-add-on
 - quick_check.ini
 - setup.sh
