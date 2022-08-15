@@ -4,14 +4,12 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 - perform all sorts of manipulations with the records on the sd card. Now you do not need to take it out of the camera every time;
 - watch the video archive on sd online without removing the card;
 - display camera information;
-- set the time zone TZ;
 - launch services (RTSP, telnet, ftp, HTTP);
 - restart and safely shut down the camera before turning off the power.  
 ### HTTP-сервер позволяет
 - производить всевозможные манипуляции с записями на sd-карте. Теперь вынимать её из камеры каждый раз вам нет необходимости;
 - смотреть видео-архив на sd онлайн, не вынимая карты;
 - отображать сведения о камере;
-- устанавливать часовую зону TZ;
 - производить запуск служб (RTSP, telnet, ftp, HTTP);
 - перезагружать и безопасно завершать работу камеры перед отключением питания.
 ### Таблица определения модели камеры V380
