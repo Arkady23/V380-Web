@@ -1,14 +1,22 @@
 #!/bin/sh
 
+lib=$(dirname "$0")
+. $lib/lot.sh
+
 printf "Content-Type: text/html\r\n\r\n"
 
 TD=$(date +%Y%m%d)
 
+cd /mnt/sdcard/RecFiles
+
 if [ -n "$QUERY_STRING" ]; then
 
-  printf "\tfolder\t%s" "$QUERY_STRING"
+  ntp=$(cat /mnt/mtd/mvconf/ntp.ini)
+  tz=$(printf "%s" "$ntp" | lot word TIMEZONE tz =)
+  tz_offset=$(printf "%s" "$ntp" | lot word TIMEZONE tz_offset =)
 
-  cd /mnt/sdcard/RecFiles
+  printf "\tfolder\t%s\t%s\t%s" "$QUERY_STRING" "$tz" "$tz_offset"
+
   if [ $QUERY_STRING == $TD ]; then
 	for f in `ls -r *.avi`; do
 		printf "\t/%s" "$f"
@@ -24,7 +32,6 @@ if [ -n "$QUERY_STRING" ]; then
 else
 
   L=0
-  cd /mnt/sdcard/RecFiles
   for f in `ls -r *.avi`; do
 	L=1
   done

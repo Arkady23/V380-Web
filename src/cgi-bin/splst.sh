@@ -25,6 +25,10 @@ c_playr(){
   fi
 }
 c_plist(){
+  ntp=$(cat /mnt/mtd/mvconf/ntp.ini)
+  tz=$(printf "%s" "$ntp" | lot word TIMEZONE tz =)
+  tz_offset=$(printf "%s" "$ntp" | lot word TIMEZONE tz_offset =)
+
   if [ $app == VLC ]; then
 	printf "<?xml version='1.0' encoding='UTF-8'?>\r\n"
 	printf "<playlist xmlns='http://xspf.org/ns/0/' xmlns:vlc='http://www.videolan.org/vlc/playlist/ns/0/' version='1'>\r\n"
@@ -43,7 +47,10 @@ c_plist(){
   cd $QUERY_STRING
   for h in `ls -r`; do
 	for f in `ls -r $h/*.avi`; do
-		t="${QUERY_STRING:6:2}-${QUERY_STRING:4:2}-${QUERY_STRING:0:4} ${h:1:2}:${f:21:2}"
+		t="${QUERY_STRING:0:4}-${QUERY_STRING:4:2}-${QUERY_STRING:6:2} ${h:1:2}:${f:21:2}:01"
+		ss=$(date -d "$t" +"%s")
+		ss=$(($tz*3600+$tz_offset*60+$ss))
+		t=$(date -d "@$ss" +"%d-%m-%Y %H:%M")
 		c_playr "$t" "$QUERY_STRING/$f"
 	done
   done
