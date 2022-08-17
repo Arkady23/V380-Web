@@ -12,7 +12,10 @@ printf "\t%s" "settsave"
 #done
 
 fl=/mnt/mtd/mvconf/factory_const.ini
+rc=/mnt/mtd/mvconf/record.ini
 add=/mnt/sdcard/ark-add-on
+
+rec=$(cat $rc)
 txt=$(cat $fl)
 N_1=$(printf "%s" "$txt" | sed -n "/\[CONST_PARAM\]/=")
 N_3=$(($N_1+1))
@@ -57,6 +60,15 @@ SAVE_1(){
 	fi
   fi
 }
+SAVE_TIME(){
+  old=$(printf "%s" "$rec" | lot word RECORDPARAM RecordTime =)
+  N_3=$?
+  if [ $N_3 -ge 1 ]; then
+	if [ $1 != $old ]; then
+		sed -i "${N_3} s/$old/\1$1/" $rc
+	fi
+  fi
+}
 SAVE_opt(){
   fo=$add/opts.ini
   opts=$(cat $fo)
@@ -81,14 +93,18 @@ SAVE_opt(){
 
  SAVE_1 " ftpd " ${QUERY_STRING:2:1}
 
- SAVE_opt app ${QUERY_STRING:3:3}
+ Q=${QUERY_STRING%+*}
+ SAVE_TIME ${Q:3}
+ Q=${QUERY_STRING#*+}
 
- SAVE_1 offline.sh ${QUERY_STRING:6:1}
+ SAVE_opt app ${Q:0:3}
 
- SAVE_1 httpd ${QUERY_STRING:7:1}
+ SAVE_1 offline.sh ${Q:3:1}
+
+ SAVE_1 httpd ${Q:4:1}
  port=$(printf "%s" "$lin" | lot word -p)
  if [ $N_3 -gt 1 ]; then
-	V=${QUERY_STRING:8}
+	V=${Q:5}
 	if [ $V -lt 1 ]; then
 		V=80
 	elif [ $V -gt 65535 ]; then

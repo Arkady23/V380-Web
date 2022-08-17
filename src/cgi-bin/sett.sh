@@ -3,6 +3,7 @@
 printf "Content-Type: text/html\r\n\r\n"
 printf "\t%s" "sett"
 
+rec=$(cat /mnt/mtd/mvconf/record.ini)
 txt=$(cat /mnt/mtd/mvconf/factory_const.ini)
 sta=$(cat /mnt/sdcard/ark-add-on/startup.sh)
 lib=$(dirname "$0")
@@ -10,10 +11,18 @@ lib=$(dirname "$0")
 . $lib/lot.sh
 
 get_param(){
-  if [ -n "$2" ]; then
-	printf "%s" "$txt" | lot word $1 $2 =
+  if [ "$1" == "txt" ]; then
+	if [ -n "$3" ]; then
+		printf "%s" "$txt" | lot word $2 $3 =
+	else
+		printf "%s" "$txt" | lot word $2 =
+	fi
   else
-	printf "%s" "$txt" | lot word $1 =
+	if [ -n "$3" ]; then
+		printf "%s" "$rec" | lot word $2 $3 =
+	else
+		printf "%s" "$rec" | lot word $2 =
+	fi
   fi
 }
 get_1(){
@@ -45,4 +54,4 @@ get_opt(){
   printf "$opt"
 }
 
-printf "\t%s" "$(get_param CONST_PARAM rtsp)" "$(get_1s 'telnetd ')" "$(get_1s ' ftpd ')" "$(get_opt app)" "$(get_1s offline.sh)" "$(get_1 httpd)"
+printf "\t%s" "$(get_param txt CONST_PARAM rtsp)" "$(get_1s 'telnetd ')" "$(get_1s ' ftpd ')" "$(get_param rec RECORDPARAM RecordTime)" "$(get_opt app)" "$(get_1s offline.sh)" "$(get_1 httpd)"
