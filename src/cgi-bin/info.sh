@@ -44,7 +44,7 @@ WLAN_STRENGTH=${WLAN_ESSID#*==}
 WLAN_ESSID=${WLAN_ESSID%==*}
 let WLAN_STRENGTH=100*`printf "$WLAN_STRENGTH"`
 
-printf "\t%s\t%s\t%s\t%s\t%s" "info" "$CAM" "$CPU" "$ARCH" "$FW_VERSION"
-printf "\t%s\t%s\t%s\t%s\t%s" "${HW_V}_$HW_V2" "${APP_V}_$APP_V2" "$LOCAL_TIME" "$UPTIME" "$LOAD_AVG"
-printf "\t%s\t%s\t%s\t%s\t%s" "$MEMORY" "$FREE_DISK" "$FREE_SD" "$LOCAL_IP" "$NETMASK"
-printf "\t%s\t%s\t%s\t%s" "$GATEWAY" "$MAC_ADDR" "$WLAN_ESSID" "$WLAN_STRENGTH%"
+printf "\t%s" "info" "$CAM" "$CPU" "$ARCH" "$FW_VERSION"
+printf "\t%s" "${HW_V}_$HW_V2" "${APP_V}_$APP_V2" "$LOCAL_TIME" "$UPTIME" "$LOAD_AVG"
+printf "\t%s" "$MEMORY" "$FREE_DISK" "$FREE_SD" "$LOCAL_IP" "$NETMASK"
+printf "\t%s" "$GATEWAY" "$MAC_ADDR" "$WLAN_ESSID" "$WLAN_STRENGTH%"
