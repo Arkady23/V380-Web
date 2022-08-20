@@ -67,4 +67,4 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 - patch_reuse
 3. Insert the card into the camera and turn it on... wait a couple of minutes. The camera should reboot. After that, you can use the Internet browser to access the address of the camera.  
 
-![Просмотр основных настроек](screenshots/image_2022_08_07T13_46_13_681Z.png?raw=true)  
+![Просмотр основных настроек](screenshots/image_2022_08_20T22_40_54_047Z.png?raw=true)
