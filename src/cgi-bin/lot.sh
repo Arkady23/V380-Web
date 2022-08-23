@@ -7,9 +7,13 @@ lot(){
   local L2=0
   local L3=0
   local EF=0
+  local E2=0
   local REPL
   local lin
   line=""; befor=""; after=""; word=""
+  if [ "${2:0:2}" == "\[" ]; then
+	E2=1
+  fi
   while [ $L == 0 ]; do
       if ! read -r; then
 		EF=1
@@ -24,6 +28,12 @@ lot(){
 			if [ $# == 2 ]; then
 				L=1; L2=1; L3=1
 			fi
+		fi
+	else
+		if [ $E2 != 0 ]; then
+			case "$REPLY" in 
+				*\[*) EF=1; L2=1; L3=1 ;;
+			esac
 		fi
 	fi
 	if [ $L1 != 0 -a $L2 == 0 ]; then
@@ -52,10 +62,7 @@ lot(){
 		word=$(printf $REPLY)
 	fi
 	if [ $EF != 0 ]; then
-		if [ $L == 0 ]; then
-			L=1
-			N=0
-		fi
+		if [ $L == 0 ]; then L=1; fi
 	fi
   done
 

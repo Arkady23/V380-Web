@@ -61,9 +61,9 @@ SAVE_1(){
   fi
 }
 SAVE_TIME(){
-  old=$(printf "%s" "$rec" | lot word RECORDPARAM RecordTime =)
+  old=$(printf "%s" "$rec" | lot word "\[RECORDPARAM" RecordTime =)
   N_3=$?
-  if [ $N_3 -ge 1 ]; then
+  if [ $N_3 -gt 1 ]; then
 	if [ $1 != $old ]; then
 		sed -i "${N_3} s/$old/\1$1/" $rc
 	fi

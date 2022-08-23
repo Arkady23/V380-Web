@@ -13,15 +13,15 @@ lib=$(dirname "$0")
 get_param(){
   if [ "$1" == "txt" ]; then
 	if [ -n "$3" ]; then
-		printf "%s" "$txt" | lot word $2 $3 =
+		printf "%s" "$txt" | lot word "$2" "$3" =
 	else
-		printf "%s" "$txt" | lot word $2 =
+		printf "%s" "$txt" | lot word "$2" =
 	fi
   else
 	if [ -n "$3" ]; then
-		printf "%s" "$rec" | lot word $2 $3 =
+		printf "%s" "$rec" | lot word "$2" "$3" =
 	else
-		printf "%s" "$rec" | lot word $2 =
+		printf "%s" "$rec" | lot word "$2" =
 	fi
   fi
 }
@@ -50,8 +50,8 @@ get_opt(){
 	sync
   fi
   opt=$(cat $add/opts.ini | lot word $1 =)
-  if [ $? == 0 ]; then opt=0; fi
+  if [ -z "$opt" ]; then opt=MPC; fi
   printf "$opt"
 }
 
-printf "\t%s" "$(get_param txt CONST_PARAM rtsp)" "$(get_1s 'telnetd ')" "$(get_1s ' ftpd ')" "$(get_param rec RECORDPARAM RecordTime)" "$(get_opt app)" "$(get_1s offline.sh)" "$(get_1 httpd)"
+printf "\t%s" "$(get_param txt '\[CONST_PARAM' rtsp)" "$(get_1s 'telnetd ')" "$(get_1s ' ftpd ')" "$(get_param rec '\[RECORDPARAM' RecordTime)" "$(get_opt app)" "$(get_1s offline.sh)" "$(get_1 httpd)"
