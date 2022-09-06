@@ -1,7 +1,6 @@
 #!/bin/sh
 
 printf "Content-Type: text/html\r\n\r\n"
-printf "\t%s" "sett"
 
 rec=$(cat /mnt/mtd/mvconf/record.ini)
 txt=$(cat /mnt/mtd/mvconf/factory_const.ini)
@@ -26,22 +25,18 @@ get_param(){
   fi
 }
 get_1(){
-  S=$(printf "%s" "$sta" | lot line $1)
-  if [ "${S:0:1}" == '#' ]; then V=0; else V=1; fi
+  local S=$(printf "%s" "$sta" | lot line $1)
+  if [ -n "$S" -a "${S:0:1}" != '#' ]; then V=1; else V=0; fi
   printf "%s" "$V"
   if [ $1 == httpd ]; then
 	V=$(printf "%s" "$S" | lot word -p)
 	printf "\t%s" "$V"
+  elif [ $1 == wifi.sh ]; then
+	V=$(printf "%s" "$S" | lot word $1)
+	printf "\t%s" "$V"
+	V=$(printf "%s" "$S" | lot word $V)
+	printf "\t%s" "$V"
   fi
-}
-get_1s(){
-  V=0
-  N_3=$(printf "%s" "$sta" | sed -n "/$1/=")
-  if [ $N_3 -ge 1 ]; then
-	local S=$(printf "%s" "$sta" | sed -n "${N_3} s/$1/$1/p")
-	if [ "${S:0:1}" != '#' ]; then V=1; fi
-  fi
-  printf "%s" "$V"
 }
 get_opt(){
   add=/mnt/sdcard/ark-add-on
@@ -50,8 +45,9 @@ get_opt(){
 	sync
   fi
   opt=$(cat $add/opts.ini | lot word $1 =)
-  if [ -z "$opt" ]; then opt=MPC; fi
+  if [ -z "$opt" -a "$1" == "app" ]; then opt=MPC; fi
   printf "$opt"
 }
 
-printf "\t%s" "$(get_param txt '\[CONST_PARAM' rtsp)" "$(get_1s 'telnetd ')" "$(get_1s ' ftpd ')" "$(get_param rec '\[RECORDPARAM' RecordTime)" "$(get_opt app)" "$(get_1s offline.sh)" "$(get_1 httpd)"
+printf "%s\t%s" "$(get_opt lang)" "sett"
+printf "\t%s" "$(get_param txt '\[CONST_PARAM' rtsp)" "$(get_1 'telnetd &')" "$(get_1 ' ftpd ')" "$(get_param rec '\[RECORDPARAM' RecordTime)" "$(get_param txt '\[CONST_PARAM' irfeed_lock_state)" "$(get_opt app)" "$(get_1 offline.sh)" "$(get_1 wifi.sh)" "$(get_1 httpd)" "$(get_opt cs)"
