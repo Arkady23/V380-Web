@@ -39,7 +39,9 @@ if [ -z "$lin" ]; then
 fi
 
 SAVE_01(){
-  par=$(printf "%s" "$fac" | sed -n "${N_1},${N_2} s/$1/$1/p" | lot word =)
+  opts=$(printf "%s" "$fac" | sed -n "${N_1},${N_2}p")
+  par=$(printf "%s" "$opts" | lot word $1 =)
+  N_3=$?
   if [ -z "$par" ]; then
 	V="0"
   else
@@ -50,8 +52,6 @@ SAVE_01(){
 		sed -i "${N_2}i $1=$2" $fc
 		N_2=$(($N_2+1))
 	else
-		opts=$(printf "%s" "$fac" | sed -n ${N_1},${N_2}p)
-		N_3=$(printf "%s" "$opts" | sed -n "/$1/=")
 		sed -i "${N_3} s/\(\s*=\s*\).*$/\1$2/" $fc
 	fi
   fi
@@ -109,6 +109,7 @@ SAVE_opt(){
 
 
  SAVE_01 rtsp ${QUERY_STRING:0:1}
+ SAVE_01 rtsp_enable ${QUERY_STRING:0:1}
 
  SAVE_1 "telnetd " ${QUERY_STRING:1:1}
 
