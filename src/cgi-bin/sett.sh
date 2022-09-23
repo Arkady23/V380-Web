@@ -50,4 +50,4 @@ get_opt(){
 }
 
 printf "%s\t%s" "$(get_opt lang)" "sett"
-printf "\t%s" "$(get_param txt '\[CONST_PARAM' rtsp)" "$(get_1 'telnetd &')" "$(get_1 ' ftpd ')" "$(get_param rec '\[RECORDPARAM' RecordTime)" "$(get_param txt '\[CONST_PARAM' irfeed_lock_state)" "$(get_opt app)" "$(get_1 offline.sh)" "$(get_1 wifi.sh)" "$(get_1 httpd)" "$(get_opt cs)"
+printf "\t%s" "$(get_param r '\[RECORDPARAM' enSpontaneousRecord)" "$(get_param r '\[RECORDPARAM' enAlarmRecord)" "$(get_param r '\[RECORDPARAM' RecordSyncAudio)" "$(get_param txt '\[CONST_PARAM' rtsp)" "$(get_1 'telnetd &')" "$(get_1 ' ftpd ')" "$(get_param rec '\[RECORDPARAM' RecordTime)" "$(get_param txt '\[CONST_PARAM' irfeed_lock_state)" "$(get_opt app)" "$(get_1 offline.sh)" "$(get_1 wifi.sh)" "$(get_1 httpd)" "$(get_opt cs)"

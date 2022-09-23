@@ -85,12 +85,12 @@ SAVE_1(){
 	fi
   fi
 }
-SAVE_TIME(){
-  lin=$(printf "%s" "$rec" | lot word "\[RECORDPARAM" RecordTime =)
+SAVE_REC(){
+  lin=$(printf "%s" "$rec" | lot word "\[RECORDPARAM" $1 =)
   N_3=$?
   if [ -n "$lin" ]; then
-	if [ "$1" != "$lin" ]; then
-		sed -i "${N_3} s/$lin/\1$1/" $rc
+	if [ "$2" != "$lin" ]; then
+		sed -i "${N_3} s/$lin/\1$2/" $rc
 	fi
   fi
 }
@@ -107,22 +107,20 @@ SAVE_opt(){
   fi
 }
 
-
- SAVE_01 rtsp ${QUERY_STRING:0:1}
- SAVE_01 rtsp_enable ${QUERY_STRING:0:1}
-
- SAVE_1 "telnetd " ${QUERY_STRING:1:1}
-
- SAVE_1 " ftpd " ${QUERY_STRING:2:1}
+ SAVE_REC enSpontaneousRecord ${QUERY_STRING:0:1}
+ SAVE_REC enAlarmRecord ${QUERY_STRING:1:1}
+ SAVE_REC RecordSyncAudio ${QUERY_STRING:2:1}
+ SAVE_01 rtsp ${QUERY_STRING:3:1}
+ SAVE_01 rtsp_enable ${QUERY_STRING:3:1}
+ SAVE_1 "telnetd " ${QUERY_STRING:4:1}
+ SAVE_1 " ftpd " ${QUERY_STRING:5:1}
 
  Q=${QUERY_STRING%%+*}
- SAVE_TIME ${Q:3}
+ SAVE_REC RecordTime ${Q:6}
  Q=${QUERY_STRING#*+}
 
  SAVE_01 irfeed_lock_state ${Q:0:1}
-
  SAVE_opt app ${Q:1:3}
-
  SAVE_1 offline.sh ${Q:4:1}
 
  p1=${Q:5:1}

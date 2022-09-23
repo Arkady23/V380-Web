@@ -70,7 +70,7 @@ c_plist(){
 if [ -f "$add/opts.ini" ]; then
   app=$(cat $add/opts.ini | lot word app =)
 else
-  app=MPC
+  app=VLC
 fi
 if [ $app == VLC ]; then
   f="xspf"
