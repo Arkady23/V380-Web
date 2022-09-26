@@ -13,7 +13,8 @@ after_fmt(){
   printf "mount $dev $sd &\n"
   printf "sleep 5\n"
   printf "cd $sd\n"
-  printf "tar -x -f /tmp/bin.tar\n"
+  printf "tar -x -f /tmp/bin1.tar\n"
+  printf "tar -x -f /tmp/bin2.tar\n"
   printf "tar -x -f /tmp/cgi.tar\n"
   printf "mkdir ark-add-on\n"
   printf "mkdir RecFiles\n"
@@ -30,12 +31,13 @@ if [ -z $USED_SPACE ]; then
   USED_SPACE=1
 else
   cd $sd
-  tar -c -f /tmp/bin.tar bin/libc.so.0
-  tar -c -f /tmp/cgi.tar cgi-bin/ bin/httpd bin/lib bin/libm.so.0 index.html.gz
+  tar -c -f /tmp/bin1.tar bin/tcpsvd
+  tar -c -f /tmp/bin2.tar bin/httpd
+  tar -c -f /tmp/cgi.tar cgi-bin/ bin/libc.so.0 bin/lib bin/libm.so.0 index.html.gz
   cd ark-add-on
   tar -c -f /tmp/ark.tar startup.sh favicon.png.gz o.js.gz s.js.gz all.css.gz o.css.gz
   cd /tmp
-  if [ -f "bin.tar" -a -f "cgi.tar" -a -f "ark.tar" ]; then
+  if [ -f "bin1.tar" -a -f "bin2.tar" -a -f "cgi.tar" -a -f "ark.tar" ]; then
 	> $fl
 	chmod 0777 $fl
 	after_fmt >> $fl

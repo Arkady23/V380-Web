@@ -49,7 +49,14 @@ SAVE_01(){
   fi
   if [ "$V" != "$2" ]; then
 	if [ -z "$par" ]; then
-		sed -i "${N_2}i $1=$2" $fc
+		V=$1
+		if [ "$1" == "rtsp" ]; then
+			lin=$(printf "%s" "$ops" | lot word cam =)
+			if [ -n "$lin" -a "$lin" == "1"]; then
+				V=rtsp_enable
+			fi
+		fi
+		sed -i "${N_2}i $V=$2" $fc
 		N_2=$(($N_2+1))
 	else
 		sed -i "${N_3} s/\(\s*=\s*\).*$/\1$2/" $fc
@@ -111,7 +118,6 @@ SAVE_opt(){
  SAVE_REC enAlarmRecord ${QUERY_STRING:1:1}
  SAVE_REC RecordSyncAudio ${QUERY_STRING:2:1}
  SAVE_01 rtsp ${QUERY_STRING:3:1}
- SAVE_01 rtsp_enable ${QUERY_STRING:3:1}
  SAVE_1 "telnetd " ${QUERY_STRING:4:1}
  SAVE_1 " ftpd " ${QUERY_STRING:5:1}
 
