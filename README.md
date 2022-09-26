@@ -17,7 +17,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 | --- | --- | --- | --- |
 | V380 | Любая камера<br>Any camera | установка вручную<br>manual setup | [httpd_V380_any_manual.zip](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380_any_manual.zip) |
 
-Ваша базовая прошивка может быть самой последней. Вся установка происходит на sd-карту. Если после установки очистить или вынуть sd, то камера будет работать в обычном режиме, как работала до установки. Для подготовки установщика к новым моделям — сообщите её Hwprefix, Hwname и 7-и значный номер версии прошивки. 
+Ваша базовая прошивка может быть самой последней. Вся установка происходит на sd-карту. Если после установки очистить или вынуть sd, то камера будет работать в обычном режиме, как работала до установки.
 ### Установка
 1. Отформатировать sd-карту в FAT32 ([Вот эта программа](http://ridgecrop.co.uk/index.htm?guiformat.htm) подходит).
 2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/download/First-time-installer/httpd_V380_any_manual.zip) в составе:
