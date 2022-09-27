@@ -43,6 +43,7 @@ else
 	after_fmt >> $fl
 	$sd/cgi-bin/offline.sh
 	killall -9 telnetd
+	killall -9 tcpsvd
 	killall -9 httpd
 	killall -2 recorder
 	umount -l $dev
