@@ -41,11 +41,11 @@ get_1(){
 get_opt(){
   add=/mnt/sdcard/ark-add-on
   if [ ! -f "$add/opts.ini" ]; then
-	printf "%s\n" "app=MPC" > $add/opts.ini
+	printf "%s\n" "app=VLC" > $add/opts.ini
 	sync
   fi
   opt=$(cat $add/opts.ini | lot word $1 =)
-  if [ -z "$opt" -a "$1" == "app" ]; then opt=MPC; fi
+  if [ -z "$opt" -a "$1" == "app" ]; then opt=VLC; fi
   printf "$opt"
 }
 
