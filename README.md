@@ -22,6 +22,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 1. Отформатировать sd-карту в FAT32 ([Вот эта программа](http://ridgecrop.co.uk/index.htm?guiformat.htm) подходит).
 2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer/httpd_V380_any_manual.zip) в составе:
 - ark-add-on
+- bin
 - quick_check.ini
 - setup.sh
 3. Вставить карту в камеру и включить её... ждать пару минут. Камера включется с запущенным сервером telnet. После чего нужно зайти через telnet по адресу камеры (логин root, пароль посмотреть в файле quick_check.ini).
@@ -32,6 +33,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 1. Format the sd card to FAT32 ([Here this program](http://ridgecrop.co.uk/index.htm?guiformat.htm) is suitable).
 2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer/httpd_V380_any_manual.zip) as part of:
 - ark-add-on
+- bin
 - quick_check.ini
 - setup.sh
 3. Insert the card into the camera and turn it on... wait a couple of minutes. The camera turns on with the telnet server running. After that, you need to log in via telnet to the camera address (login root, password look in the file quick_check.in).
