@@ -5,7 +5,7 @@ printf "Content-Type: text/html\r\n\r\n"
 rec=$(cat /mnt/mtd/mvconf/record.ini)
 txt=$(cat /mnt/mtd/mvconf/factory_const.ini)
 sta=$(cat /mnt/sdcard/ark-add-on/startup.sh)
-lib=$(dirname "$0")
+lib=/mnt/sdcard/cgi-bin
 
 . $lib/lot.sh
 

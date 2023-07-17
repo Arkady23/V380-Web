@@ -1,6 +1,6 @@
 #!/bin/sh
 
-lib=$(dirname "$0")
+lib=/mnt/sdcard/cgi-bin
 . $lib/lot.sh
 
 printf "Content-Type: text/html\r\n\r\n"

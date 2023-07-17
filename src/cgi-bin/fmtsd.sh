@@ -3,8 +3,7 @@
 fl=/tmp/fmt.sh
 sd=/mnt/sdcard
 dev=/dev/mmcblk0p1
-
-lib=$(dirname "$0")
+lib=/mnt/sdcard/cgi-bin
 . $lib/lot.sh
 
 USED_SPACE=$(df -h $sd | (read -r; read -r w1 w2 w3 w4; printf "$w3"))

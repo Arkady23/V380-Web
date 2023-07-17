@@ -1,7 +1,7 @@
 #!/bin/sh
 
 add=/mnt/sdcard/ark-add-on
-lib=$(dirname "$0")
+lib=/mnt/sdcard/cgi-bin
 . $lib/lot.sh
 
 c_playr(){
