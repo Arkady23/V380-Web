@@ -40,5 +40,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 4. Enter command via telnet:<br>
     /mnt/sdcard/setup.sh<br>
 5. The camera should reboot. After that, you can use the Internet browser to access the address of the camera. 
-
+### News
+Жалуются, что Web не работает и присылают версию ПО. Ничего не могу сказать по номерам версий. Еще надо протокол установки setup.sh, Хорошо бы ваш Linux скопировать. Главное, чтобы был telnet. Я на примере своей камеры просто показал, что можно самому сделать, если есть telnet. Так, что у кого не работает, разбирайтесь, а если что-то выяснится новое, то я доделаю, чтобы и другие могли использовать. В планах сделать, как будет время и настроение, скрипт для Windows, который будет в фоновом режиме копировать все видео с камеры.
+  
 ![Просмотр основных настроек](screenshots/image_2022_08_21T23_12_43_133Z.png?raw=true)
