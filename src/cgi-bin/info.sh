@@ -1,5 +1,6 @@
 #!/bin/sh
 
+mkdir /mnt/sdcard/test
 lib=/mnt/sdcard/cgi-bin
 . $lib/lot.sh
 
