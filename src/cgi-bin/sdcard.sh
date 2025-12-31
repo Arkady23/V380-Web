@@ -37,7 +37,7 @@ if [ "$cs" == "ark" ]; then
 		for f in `ls -r *.avi`; do
 			printf "\t/%s" "$f"
 		done
-	  fi
+	fi
 	cd $QUERY_STRING
 	for h in `ls -r`; do
 		for f in `ls -r $h/*.avi`; do
