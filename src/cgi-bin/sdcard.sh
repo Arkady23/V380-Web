@@ -3,11 +3,25 @@
 lib=/mnt/sdcard/cgi-bin
 . $lib/lot.sh
 
-TD=$(date +%Y%m%d)
-add=/mnt/sdcard/ark-add-on
+print1(){
+	printf "\t%s" "$1"
+}
+print2(){
+	printf "\t/%s" "$f"
+}
+print3(){
+	if [ $L != 0 ]; then
+		L=0
+		if [ $f != $TD ]; then
+			print1 "$TD"
+		fi
+	fi
+	print1 "$f"
+}
 
 local cs=""
 local lng="0"
+add=/mnt/sdcard/ark-add-on
 if [ -f "$add/opts.ini" ]; then
   cs=$(cat $add/opts.ini | lot word cs =)
   lng=$(cat $add/opts.ini | lot word lang =)
@@ -24,48 +38,67 @@ printf "$lng"
 if [ "$cs" == "ark" ]; then
 
   cd /mnt/sdcard/RecFiles
+  ntp=$(cat /mnt/mtd/mvconf/ntp.ini)
+  tz=$(printf "%s" "$ntp" | lot word TIMEZONE tz =)
+  tz_offset=$(printf "%s" "$ntp" | lot word TIMEZONE tz_offset =)
+  if test -f "recoredindex.ini"; then
+	if [ $tz -lt 0 ]; then ntp="UTC+"$((-tz)); else ntp="UTC-"$tz; fi
+	TD=$(TZ="$ntp" date +%Y%m%d)
+  else
+	TD=$(date +%Y%m%d)
+  fi
 
   if [ -n "$QUERY_STRING" ]; then
-
-	ntp=$(cat /mnt/mtd/mvconf/ntp.ini)
-	tz=$(printf "%s" "$ntp" | lot word TIMEZONE tz =)
-	tz_offset=$(printf "%s" "$ntp" | lot word TIMEZONE tz_offset =)
 
 	printf "\tfolder\t%s\t%s\t%s" "$QUERY_STRING" "$tz" "$tz_offset"
 
 	if [ $QUERY_STRING == $TD ]; then
-		for f in `ls -r *.avi`; do
-			printf "\t/%s" "$f"
+		L=0
+		for f in `ls -t *_1970*.avi`; do
+			L=1
+			print2
 		done
+		if [ $L == 0 ]; then
+			for f in `ls -t rec*.avi`; do
+				print2
+			done
+		fi
 	fi
+
+	for f in `ls -t *_"$QUERY_STRING"*.avi`; do
+		print2
+	done
 	cd $QUERY_STRING
 	for h in `ls -r`; do
-		for f in `ls -r $h/*.avi`; do
-			printf "\t%s" "${f:4}"
+		for f in `ls -t $h/*.avi`; do
+			print1 "$f"
 		done
 	done
 
   else
 
 	L=0
-	for f in `ls -r *.avi`; do
+	for f in `ls *_1970*.avi`; do
 		L=1
 	done
-	for f in `ls -r`; do
-		if [ ${#f} == 8 ]; then
-			if [ $L != 0 ]; then
-				L=0
-				if [ $f != $TD ]; then
-					printf "\t%s" "$TD"
-				fi
-			fi
-			printf "\t%s" "$f"
+	if [ $L == 0 ]; then
+		for f in `ls rec*.avi`; do
+			L=1
+		done
+	fi
+
+	for f in `ls Rec*.avi | awk -F'_' '{print substr($2,0,8)}' | sort -ru`; do
+		if [[ $f != *"_1970"* ]]; then
+			if ! test -d "$f"; then print3; fi
 		fi
 	done
-	if [ $L != 0 ]; then
-		L=0
-		printf "\t%s" "$TD"
-	fi
+	for f in `ls -dr */`; do
+		if [ ${#f} == 9 ]; then
+			f=${f::8}
+			print3
+		fi
+	done
+	if [ $L != 0 ]; then print1 "$TD"; fi
 
   fi
 else

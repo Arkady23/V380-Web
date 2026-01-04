@@ -3,36 +3,49 @@
 fl=/tmp/fmt.sh
 sd=/mnt/sdcard
 dev=/dev/mmcblk0p1
-lib=/mnt/sdcard/cgi-bin
-. $lib/lot.sh
 
-USED_SPACE=$(df -h $sd | (read -r; read -r w1 w2 w3 w4; printf "$w3"))
+next(){
+	echo "#!/bin/sh"
+	echo "killall -2 recorder"
+	echo "sync"
+	echo "umount -l $dev"
+	echo "mkfs.vfat $dev"
+	echo "mount $dev $sd"
+	echo "cd $sd"
+	echo "cp -r /tmp/bin ."
+	echo "cp -r /tmp/cgi-bin ."
+	echo "cp -r /tmp/ark-add-on ."
+	echo "cp /tmp/index.html.gz ."
+	echo "rm -f /mnt/mtd/reset.sh"
+	echo "sync"
+	echo "umount -l $dev"
+	echo "killall5"
+	echo "reboot"
+}
+
+USED_SPACE=$(df -k $sd | (read -r; read -r w1 w2 w3 w4; printf "$w3"))
 if [ -z $USED_SPACE ]; then
-  USED_SPACE=1
+	USED_SPACE=1
 else
-  killall -9 telnetd
-  killall -9 tcpsvd
-  killall -9 httpd
-  cd $sd
-  cgi-bin/offline.sh
-  mv -f bin /tmp
-  mv -f cgi-bin /tmp
-  mv -f ark-add-on /tmp
-  mv -f index.html.gz /tmp
-  cd /tmp
-  killall -2 recorder
-  umount -l $dev
-  mkfs.vfat $dev
-  sync
-  killall -9 recorder
-  mount $dev $sd &
-  sleep 5
-  cp -r bin $sd
-  cp -r cgi-bin $sd
-  cp -r ark-add-on $sd
-  cp index.html.gz $sd
-  sync
-  umount -l $dev
-  killall5
-  reboot
+	cd $sd
+	pkill -f watch
+	pkill -f httpd
+	pkill -f tcpsvd
+	cp -f /etc/bak/reset/reset.sh /mnt/mtd
+	cp -f index.html.gz /tmp
+	cp -r ark-add-on /tmp
+	cp -r cgi-bin /tmp
+	cp -r bin /tmp
+	cd /tmp/bin
+	if [[ -f busybox && -f lib && -f libc.so.0 && -f libm.so.0 ]]; then
+		next > /mnt/mtd/reset.sh
+		sync
+		/mnt/mtd/reset.sh &
+	else
+		rm -rf &sd/RecFiles
+		sync
+		umount -l $dev
+		killall5
+		reboot
+	fi
 fi

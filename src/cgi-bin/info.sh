@@ -30,7 +30,7 @@ UPTIME=$(cat /proc/uptime | (read -r w1 w2; printf "$w1"))
 LOAD_AVG=$(cat /proc/loadavg | (read -r w1 w2 w3 w4; printf "$w1 $w2 $w3"))
 
 MEMORY=$(free -k | (read -r; read -r w1 w2 w3 w4 w5; printf "$w4 / $w2"))
-FREE_DISK=$(df -k /mnt/mtd | (read -r; read -r w1 w2 w3 w4 w5; printf "$w4"))
+FREE_DISK=$(df -h /mnt/mtd | (read -r; read -r w1 w2 w3 w4 w5; printf "$w4"))
 FREE_SD=$(df -h /mnt/sdcard | (read -r; read -r w1 w2 w3 w4 w5; printf "$w4"))
 
 txt=$(ifconfig wlan0 | (read -r w1; w2=$((${#w1}-17)); printf "${w1:$w2}"; read -r w1 w2 w3 w4 w5; printf "${w2:5}=${w4:5}"))

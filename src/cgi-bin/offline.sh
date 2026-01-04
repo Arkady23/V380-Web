@@ -2,9 +2,9 @@
  if [ $# -ge 1 ]; then
 	sleep $1
  fi
- killall -9 eventhub_core
- killall -9 as9ipcwatchdog
- killall -9 as9updatednsip
- killall -9 as9nvserver
- killall -9 udp_broadcast
- killall -9 vsipbroadcast
+ pkill -f eventhub_core
+ pkill -f as9ipcwatchdog
+ pkill -f as9updatednsip
+ pkill -f as9nvserver
+ pkill -f udp_broadcast
+ pkill -f vsipbroadcast

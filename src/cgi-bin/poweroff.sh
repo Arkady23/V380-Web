@@ -1,7 +1,8 @@
 #!/bin/sh
 
-killall -9 httpd
-/mnt/mtd/stopallapp.sh
+pkill -f httpd
+/mnt/sdcard/offline.sh
+pkill -f recorder
 sync
 umount /dev/mmcblk0p1
 killall5
