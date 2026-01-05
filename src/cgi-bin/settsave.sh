@@ -113,6 +113,22 @@ SAVE_opt(){
 	printf "%s\n" "$1=$2" >> $fo
   fi
 }
+SAVE_offline1(){
+  V="p w /dev/stdout"
+  lin=$(cat $ns | sed -n "$1$V")
+  if [ ${#lin} -gt 2 ]; then
+	sed -i "$1" $ns
+  fi
+}
+SAVE_offline(){
+  ns=/mnt/mtd/nvipcstart.sh
+  if [ $1 == 0 ]; then
+	SAVE_offline1 "/apps\/log_/s/^#\+//"
+  else
+	SAVE_offline1 "/^[^#].*apps\/log_/s/^/#/"
+  fi
+  SAVE_1 offline.sh $1
+}
 
  SAVE_REC enSpontaneousRecord ${QUERY_STRING:0:1}
  SAVE_REC enAlarmRecord ${QUERY_STRING:1:1}
@@ -127,7 +143,7 @@ SAVE_opt(){
 
  SAVE_01 irfeed_lock_state ${Q:0:1}
  SAVE_opt app ${Q:1:3}
- SAVE_1 offline.sh ${Q:4:1}
+ SAVE_offline ${Q:4:1}
 
  p1=${Q:5:1}
  Q=${Q:6}
