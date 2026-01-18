@@ -6,9 +6,9 @@ printf "\t%s\t" "load"
 
 cd /mnt/sdcard/ark-add-on
 if [ -f "update" ]; then
-  /mnt/sdcard/bin/busybin tar -x -f update update.sh
+  /mnt/sdcard/bin/busybox tar -x -f update update.sh
   sync
   if [ -f "update.sh" ]; then
-	/mnt/sdcard/ark-add-on/update.sh update
+	/mnt/sdcard/ark-add-on/update.sh
   fi
 fi

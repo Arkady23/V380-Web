@@ -1,8 +1,6 @@
 #!/bin/sh
 
 add=/mnt/sdcard/ark-add-on
-lib=/mnt/sdcard/cgi-bin
-. $lib/lot.sh
 
 c_playr(){
   if [ $app == VLC ]; then
@@ -25,10 +23,6 @@ c_playr(){
   fi
 }
 c_plist(){
-  ntp=$(cat /mnt/mtd/mvconf/ntp.ini)
-  tz=$(printf "%s" "$ntp" | lot word TIMEZONE tz =)
-  tz_offset=$(printf "%s" "$ntp" | lot word TIMEZONE tz_offset =)
-
   if [ $app == VLC ]; then
 	printf "<?xml version='1.0' encoding='UTF-8'?>\r\n"
 	printf "<playlist xmlns='http://xspf.org/ns/0/' xmlns:vlc='http://www.videolan.org/vlc/playlist/ns/0/' version='1'>\r\n"
@@ -101,18 +95,19 @@ print2(){
 	c_playr "$t" "$f"
 }
 
-if [ -f "$add/opts.ini" ]; then
-  app=$(cat $add/opts.ini | lot word app =)
-else
-  app=VLC
-fi
+ip=$(ifconfig wlan0 | (read -r; read -r w1 w2 w3; printf "${w2:5}"))
+if [ -f "$add/opts.ini" ]; then f=" $add/opts.ini"; else f=""; fi
+f=$(awk -f /mnt/sdcard/cgi-bin/splst.awk /mnt/mtd/mvconf/ntp.ini$f)
+app=${f:0:3}; f=${f:3}
+tz_offset=${f%=*}
+tz=${f#*=}
+
 if [ $app == VLC ]; then
   f="xspf"
 else
   f="mpcpl"
 fi
 
-ip=$(ifconfig wlan0 | lot word "inet addr:")
 fn=${QUERY_STRING}_${ip}.$f
 fl=/tmp/$fn
 c_plist > $fl

@@ -1,8 +1,5 @@
 #!/bin/sh
 
-lib=/mnt/sdcard/cgi-bin
-. $lib/lot.sh
-
 print1(){
 	printf "\t%s" "$1"
 }
@@ -19,28 +16,29 @@ print3(){
 	print1 "$f"
 }
 
-local cs=""
-local lng="0"
 add=/mnt/sdcard/ark-add-on
-if [ -f "$add/opts.ini" ]; then
-  cs=$(cat $add/opts.ini | lot word cs =)
-  lng=$(cat $add/opts.ini | lot word lang =)
-fi
+
+if [ -f "$add/opts.ini" ]; then f=" $add/opts.ini"; else f=""; fi
+f=$(awk -v var=1 -f /mnt/sdcard/cgi-bin/splst.awk /mnt/mtd/mvconf/ntp.ini$f)
+app=$(printf "$f" | (read -r w1 w2; printf "${w1:3}"))
+f=$(printf "$f" | (read -r w1 w2; printf "$w2"))
+lng=${f:0:1}
+cs=${f:1}
+
+printf "Content-Type: text/html\r\n\r\n"
+printf "$lng"
+
 if [ -z "$cs" -o "$cs" == "0" ]; then
   cs="ark"
 else
   if [ "$HTTP_COOKIE" == "$cs" ]; then cs="ark"; fi
 fi
 
-printf "Content-Type: text/html\r\n\r\n"
-printf "$lng"
-
 if [ "$cs" == "ark" ]; then
 
+  tz=${app#*=}
+  tz_offset=${app%=*}
   cd /mnt/sdcard/RecFiles
-  ntp=$(cat /mnt/mtd/mvconf/ntp.ini)
-  tz=$(printf "%s" "$ntp" | lot word TIMEZONE tz =)
-  tz_offset=$(printf "%s" "$ntp" | lot word TIMEZONE tz_offset =)
   if test -f "recoredindex.ini"; then
 	if [ $tz -lt 0 ]; then ntp="UTC+"$((-tz)); else ntp="UTC-"$tz; fi
 	TD=$(TZ="$ntp" date +%Y%m%d)

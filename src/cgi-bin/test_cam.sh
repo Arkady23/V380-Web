@@ -1,18 +1,15 @@
 #!/bin/sh
 
-lib=/mnt/sdcard/cgi-bin
-. $lib/lot.sh
-
 add=/mnt/sdcard/ark-add-on
 fo=$add/opts.ini
-ops=$(cat $fo)
 
-  lin=$(printf "%s" "$ops" | lot word cam =)
-  if [ -z "$lin" ]; then
-	if [ $(grep -m 1 rtsp_enable /mvs/apps/recorder) ]; then
-		p=1
-	 else
-		p=0
+  if [ -z "$(awk 'sub(/=/," "){if($1=="cam" && NF>1){printf 1;exit}}' $fo)" ]
+  then
+	if [ -n "$(grep -m 1 rtsp_enable /mvs/apps/recorder)" ]
+	then p=1; else p=0; fi
+	if [ -f "$fo" ]; then
+		printf "%s\n" "cam=$p" >> $fo
+	else
+		printf "%s\n" "cam=$p" > $fo
 	fi
-	printf "%s\n" "cam=$p" >> $fo
   fi

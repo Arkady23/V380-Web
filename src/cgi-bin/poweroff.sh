@@ -7,7 +7,7 @@ sync
 umount /dev/mmcblk0p1
 killall5
 
-if [ "$QUERY_STRING" ]; then
+if [ "$QUERY_STRING" -o $# -ge 1 ]; then
   reboot
 else
   halt
