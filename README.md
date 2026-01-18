@@ -19,7 +19,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 
 Ваша базовая прошивка может быть самой последней. Вся установка происходит на sd-карту. Если после установки очистить или вынуть sd, то камера будет работать в обычном режиме, как работала до установки.  
 ### Когда установка невозможна
-Т.к. установка web-сервера осуществляется через telnet, установка не может быть произведена в камерах, производители которых закрыли доступ к telnet-серверу. Web-сервер может быть установлен на те камеры, которые открывают telnet при наличии файла quick_check.ini на sd-карте. После установки web-сервера, наличие файла quick_check.ini не требуется, telnet может включаться из страницы настроек камеры.
+Т.к. установка web-сервера осуществляется через telnet, установка не может быть произведена в камерах, производители которых закрыли доступ к telnet-серверу. Web-сервер может быть установлен на те камеры, которые открывают telnet при наличии файла quick_check.ini на sd-карте. После установки web-сервера, наличие файла quick_check.ini не требуется, telnet может включаться со страницы настроек камеры.
 ### Установка
 1. Отформатировать sd-карту в FAT32, например, используя программу Rufus в режиме незагрузочного диска.
 2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260106/httpd_V380_any_manual.zip) в составе:
@@ -31,6 +31,8 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 4. Ввести команду через telnet:<br>
     /mnt/sdcard/setup.sh
 5. Камера должна перезагрузится. После чего можно заходить с помощью обозревателя интернета на адрес камеры. 
+### When installation is not possible
+Since the web server is installed via Telnet, it cannot be installed on cameras whose manufacturers have blocked access to the Telnet server. The web server can be installed on cameras that support Telnet if the quick_check.ini file is present on the SD card. After installing the web server, the quick_check.ini file is no longer required; Telnet can be enabled from the camera's settings page.
 ### Installation
 1. Format the sd-card to FAT32, for example using Rufus in non-bootable disk mode.
 2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260106/httpd_V380_any_manual.zip) as part of:
