@@ -41,12 +41,6 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
     /mnt/sdcard/setup.sh<br>
 5. The camera should reboot. After that, you can use the Internet browser to access the address of the camera. 
 ### News
-It was discovered that, for some reason, old videos weren't being automatically deleted; when the SD card was full, recording to it stopped. Therefore, a daily script called everyday.sh was added to the web server's autostart script. If the card's free space drops below 3.5 GB, it will delete all videos from the oldest day.  
-
-Обнаружилось, что по каким то причинам старые видеозаписи автоматически не удаляются, при заполнении sd-карты запись на sd-карту прекращается. Поэтому в скрипт автозапуска web-сервера добавлен ежедневный запуск скрипа everyday.sh, который в случае, если свободного места на карте остается менее 3.5 Гб, будет удалять все видеозаписи самого старого дня.
-### Comment
-People complain that the Web does not work and send the software version. I can't say anything about the version numbers. First of all, you need to have the setup.sh installation log and a simple copy of your camera's Linux distribution. This requires access to the camera via telnet.  
-
-Жалуются, что Web не работает и присылают версию ПО. Ничего не могу сказать по номерам версий. Прежде всего надо иметь протокол установки setup.sh и простую копию Linux вашей камеры. Для этого необходимо, чтобы у вас был доступ к камере через telnet.
+18.01.2026. Исправлена ошибка скрипта загрузки обновлений load.sh. Пожалуйста замените этот скрипт на sd-карте в папке cg-bin, т.к. в дальнейшем будут публиковаться только обновления, а не начальный установщик.
   
 ![Просмотр основных настроек](screenshots/image_2022_08_21T23_12_43_133Z.png?raw=true)
