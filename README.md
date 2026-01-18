@@ -32,7 +32,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
     /mnt/sdcard/setup.sh
 5. Камера должна перезагрузится. После чего можно заходить с помощью обозревателя интернета на адрес камеры. 
 ### When installation is not possible
-Since the web server is installed via Telnet, it cannot be installed on cameras whose manufacturers have blocked access to the Telnet server. The web server can be installed on cameras that support Telnet if the quick_check.ini file is present on the SD card. After installing the web server, the quick_check.ini file is no longer required; Telnet can be enabled from the camera's settings page.
+Since the web server is installed via telnet, it cannot be installed on cameras whose manufacturers have blocked access to the telnet-server. The web-server can be installed on cameras that support telnet if the quick_check.ini file is present on the sd-card. After installing the web server, the quick_check.ini file is no longer required, telnet can be enabled from the camera's settings page.
 ### Installation
 1. Format the sd-card to FAT32, for example using Rufus in non-bootable disk mode.
 2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260106/httpd_V380_any_manual.zip) as part of:
