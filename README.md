@@ -42,6 +42,9 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 5. The camera should reboot. After that, you can use the Internet browser to access the address of the camera. 
 ### News
 **18.01.2026**. A bug with the load.sh update download script has been fixed. Please replace this script in the cgi-bin folder on your SD card, as only updates will be published in the future, not the initial installer. The script must be downloaded from [this page](https://github.com/Arkady23/V380-Web/blob/main/src/cgi-bin/load.sh). If you were able to replace this script, you can update the server from the update_20260118.tar file on the camera settings page. Or simply reinstall the entire server from the httpd_V380_any_manual.zip file from 01/18/2026.  
+Otherwise, the January 18, 2026 version remains functionally unchanged, with the exception of a switch from the slow lot.sh function for searching data in text files to awk scripts, which perform this task much faster. After this update, the camera will respond somewhat more quickly to requests.  
+
 Исправлена ошибка скрипта загрузки обновлений load.sh. Пожалуйста замените этот скрипт на sd-карте в папке cgi-bin, т.к. в дальнейшем будут публиковаться только обновления, а не начальный установщик. Скрипт необходимо скачать с [этой страницы](https://github.com/Arkady23/V380-Web/blob/main/src/cgi-bin/load.sh). Если вы смогли заменить этот скрипт, вы можете обновить сервер из файла update_20260118.tar на странице с настройками камеры. Или просто переустановите весь сервер из файла httpd_V380_any_manual.zip от 18.01.2026.  
+В остальном версия от 18.01.2026 функционально не изменилась за исключением перехода с медленной функции lot.sh поиска даннык в текстовых файлах на скрипты awk, которые это делают значительно быстрее. После этого обновления камера будет несколько быстрее реагировать на запросы.  
 
 ![Просмотр основных настроек](screenshots/image_2022_08_21T23_12_43_133Z.png?raw=true)
