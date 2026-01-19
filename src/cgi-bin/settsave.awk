@@ -1,8 +1,9 @@
+#!/usr/bin/awk -f
+
 BEGIN {
   FS=";"
   vlc="VLC"
   rtsp="rtsp"
-  split(qs, aq, "+")
   ir="irfeed_lock_state"
   fv="/mnt/mtd/nvipcstart.sh"
   fr="/mnt/mtd/mvconf/record.ini"
@@ -10,28 +11,36 @@ BEGIN {
   fs="/mnt/sdcard/ark-add-on/opts.ini"
   ft="/mnt/mtd/mvconf/factory_const.ini"
   fu="/mnt/sdcard/ark-add-on/startup.sh"
+  split(ENVIRON["QUERY_STRING"],aq,"+")
   t2=t21=substr(aq[2],1,1)
   s1=s11=substr(aq[2],2,3)
   s2=s21=substr(aq[5],1,1)
   u4=u41=substr(aq[2],5,1)
   u5=u51=substr(aq[2],6,1)
+  t1=t11=substr(aq[1],4,1)
   s3=s31=substr(aq[5],2)
-  t1=t11=substr(qs,4,1)
+  ARGV[ARGC]=ft; ARGC++
+  ARGV[ARGC]=fu; ARGC++
+  ARGV[ARGC]=fs; ARGC++
+  ARGV[ARGC]=fr; ARGC++
+  ARGV[ARGC]=fv; ARGC++
   ssid=substr(aq[2],7)
   u3=substr(aq[4],1,1)
   port=substr(aq[4],2)
+  r1=substr(aq[1],3,1)
+  r3=substr(aq[1],2,1)
+  r4=substr(aq[1],1,1)
+  u1=substr(aq[1],5,1)
+  u2=substr(aq[1],6,1)
   r2=substr(aq[1],7)
-  r1=substr(qs,3,1)
-  r3=substr(qs,2,1)
-  r4=substr(qs,1,1)
-  u1=substr(qs,5,1)
-  u2=substr(qs,6,1)
   uv= u4>0? 0:1
   psk=aq[3]
+
+  printf "Content-Type: text/html\r\n\r\n"
+  printf "\tsetts"
 }
 {
   nf=0
-  fl = substr(FILENAME, length(FILENAME)-4)
   s0=$1; sub(/^[ \t]+/, "", s0); sub(/[ \t]+$/, "", s0)
   if (length(s0) > 0) {
 	if (split(s0, af, "=") > 1) {
@@ -39,7 +48,7 @@ BEGIN {
 	} else { nf=1 }
 	sub(/[ \t]+$/, "", af[1])
   }
-  if (fl == "t.ini") {
+  if (ARGIND == 1) {
 	nt++
 	at[FNR] = $0
 	if (cp == 1) {
@@ -62,7 +71,7 @@ BEGIN {
 	} else if (cp == 0) {
 		if (af[1] == "[CONST_PARAM]") cp=1
 	}
-  } else if(fl == "up.sh") {
+  } else if(ARGIND == 2) {
 	nu++
 	au[FNR] = $0
 	if(nf==0) {
@@ -92,7 +101,7 @@ BEGIN {
 			u51 = -1
 		}
 	}
-  } else if(fl == "s.ini") {
+  } else if(ARGIND == 3) {
 	ns++
 	as[FNR] = $0
 	if(nf==0) {
@@ -108,7 +117,7 @@ BEGIN {
 			s31 = -1
 		}
 	}
-  } else if(fl == "d.ini") {
+  } else if(ARGIND == 4) {
 	nr++
 	ar[FNR] = $0
 	if (nf>0) {
@@ -130,7 +139,7 @@ BEGIN {
 			if (af[1] == "[RECORDPARAM]") rp=1
 		}
 	}
-  } else if(fl =="rt.sh") {
+  } else if(ARGIND == 5) {
 	nv++
 	av[FNR] = $0
 	if (nf>0) {

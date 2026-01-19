@@ -16,10 +16,7 @@ print3(){
 	print1 "$f"
 }
 
-add=/mnt/sdcard/ark-add-on
-
-if [ -f "$add/opts.ini" ]; then f=" $add/opts.ini"; else f=""; fi
-f=$(awk -v var=1 -f /mnt/sdcard/cgi-bin/splst.awk /mnt/mtd/mvconf/ntp.ini$f)
+f=$(awk -v var=1 -f /mnt/sdcard/cgi-bin/splst.awk)
 app=$(printf "$f" | (read -r w1 w2; printf "${w1:3}"))
 f=$(printf "$f" | (read -r w1 w2; printf "$w2"))
 lng=${f:0:1}

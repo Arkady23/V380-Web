@@ -1,7 +1,5 @@
 #!/bin/sh
 
-add=/mnt/sdcard/ark-add-on
-
 c_playr(){
   if [ $app == VLC ]; then
 	printf "\t\t<track>\r\n"
@@ -96,8 +94,7 @@ print2(){
 }
 
 ip=$(ifconfig wlan0 | (read -r; read -r w1 w2 w3; printf "${w2:5}"))
-if [ -f "$add/opts.ini" ]; then f=" $add/opts.ini"; else f=""; fi
-f=$(awk -f /mnt/sdcard/cgi-bin/splst.awk /mnt/mtd/mvconf/ntp.ini$f)
+f=$(awk -f /mnt/sdcard/cgi-bin/splst.awk)
 app=${f:0:3}; f=${f:3}
 tz_offset=${f%=*}
 tz=${f#*=}

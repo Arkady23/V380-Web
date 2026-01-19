@@ -2,7 +2,7 @@
 
 cat > /mnt/sdcard/ark-add-on/update
 printf "Content-Type: text/html\r\n\r\n"
-printf "\t%s\t" "load"
+printf "\tload\t"
 
 cd /mnt/sdcard/ark-add-on
 if [ -f "update" ]; then

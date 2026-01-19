@@ -4,13 +4,15 @@ ssid=pwd=""
 li=lu=ni=nu=si=0
 wf="/mnt/mtd/mvconf/wifi.ini"
 sf="/mnt/sdcard/ark-add-on/startup.sh"
+ARGV[ARGC]=sf; ARGC++
+ARGV[ARGC]=wf; ARGC++
 }
 {
   nf=0
-  fl = substr(FILENAME, length(FILENAME)-4); s0=$1; sub(/^[ \t]+/, "", s0)
-  sub(/[ \t]+$/, "", s0); if(length(s0) > 0) { if (split(s0, af, "=") > 1)
-  { nf=2; sub(/^[ \t]+/,"",af[2]) } else { nf=1 } sub(/[ \t]+$/,"",af[1])}
-  if (fl == "i.ini") {
+  s0=$1; sub(/^[ \t]+/, "", s0); sub(/[ \t]+$/, "", s0); if(length(s0) > 0) {
+  if (split(s0, af, "=") > 1) { nf=2; sub(/^[ \t]+/,"",af[2]) } else { nf=1 }
+  sub(/[ \t]+$/,"",af[1]) }
+  if (ARGIND > 1) {
 	ni++
 	ai[FNR] = $0
 	if (si == 1) {
@@ -25,7 +27,7 @@ sf="/mnt/sdcard/ark-add-on/startup.sh"
 	} else if (si == 0) {
 		if (af[1] == "[STATION]") si=1
 	}
-  } else if (fl == "up.sh") {
+  } else if (ARGIND == 1) {
 	if(nf>0) {
 		i = index($0,"/wifi.sh")
 		if (i>0) {

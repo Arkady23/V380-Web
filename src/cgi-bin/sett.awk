@@ -1,3 +1,5 @@
+#!/usr/bin/awk -f
+
 BEGIN {
   FS=";"
   port=80
@@ -9,11 +11,16 @@ BEGIN {
   fu="/mnt/sdcard/ark-add-on/startup.sh"
   rtsp=tel=ftp=http=cp=rp=r1=r2=r3=r4=0
   off=ssid=psk=lang=cs=""
+  ARGV[ARGC]=ft; ARGC++
+  ARGV[ARGC]=fu; ARGC++
+  ARGV[ARGC]=fs; ARGC++
+  ARGV[ARGC]=fr; ARGC++
   wifi="\t\t"
+
+  printf "Content-Type: text/html\r\n\r\n"
 }
 {
   nf=0
-  fl = substr(FILENAME, length(FILENAME)-4)
   s0=$1; sub(/^[ \t]+/, "", s0); sub(/[ \t]+$/, "", s0)
   if (length(s0) > 0) {
 	if (split(s0, af, "=") > 1) {
@@ -21,7 +28,7 @@ BEGIN {
 	} else { nf=1 }
 	sub(/[ \t]+$/, "", af[1])
   }
-  if (fl == "t.ini") {
+  if (ARGIND == 1) {
 	if (cp == 1) {
 		if (substr(af[1],1,1) == "[") {
 			cp=2; nextfile
@@ -32,17 +39,17 @@ BEGIN {
 	} else if (cp == 0) {
 		if (af[1] == "[CONST_PARAM]") cp=1
 	}
-  } else if(fl == "up.sh") {
+  } else if(ARGIND == 2) {
 	if (index(s0, "telnetd ")>0) tel = func1()
 	else if (index(s0, "ftpd ")>0) ftp = func1()
 	else if (index(s0, "/offline.sh")>0) off = func1()
 	else if (index(s0, "httpd ")>0) http = func1() "\t" func2(port,4)
 	else if (index(s0, "/wifi.sh")>0) wifi = func1() "\t" func2(ssid,2) "\t" func2(psk,3)
-  } else if(fl == "s.ini") {
+  } else if(ARGIND == 3) {
 	if (af[1] == "lang") lang = af[2]
 	else if (af[1] == "cs") cs = af[2]
 	else if (af[1] == "app") app = af[2]
-  } else if(fl == "d.ini") {
+  } else if(ARGIND == 4) {
 	if (rp == 1) {
 		if (substr(af[1],1,1) == "[") {
 				rp=2; nextfile
