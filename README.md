@@ -46,8 +46,7 @@ Since the web server is installed via telnet, it cannot be installed on cameras 
 5. The camera should reboot. After that, you can use the Internet browser to access the address of the camera. 
 ### News
 **19.01.2026**. Script optimization has been performed.  
-
-Произведена оптимизация скриптов.
+Произведена оптимизация скриптов.  
 **18.01.2026**. A bug with the load.sh update download script has been fixed. Please replace this script in the cgi-bin folder on your SD card, as only updates will be published in the future, not the initial installer. The script must be downloaded from [this page](https://github.com/Arkady23/V380-Web/blob/main/src/cgi-bin/load.sh). If you were able to replace this script, you can update the server from the [update_20260118.tar](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260118/update_20260118.tar) file on the camera settings page. Or simply reinstall the entire server from the [httpd_V380_any_manual.zip](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260118/httpd_V380_any_manual.zip) file from 01/18/2026.  
 Otherwise, the January 18, 2026 version remains functionally unchanged, with the exception of a switch from the slow lot.sh function for searching data in text files to awk scripts, which perform this task much faster. After this update, the camera will respond somewhat more quickly to requests.  
 
