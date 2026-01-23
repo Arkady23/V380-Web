@@ -67,7 +67,7 @@ END {
 				if (t) print1(t)
 			}
 		} else {
-			cmd= cmd " && ls -r " ENVIRON["QUERY_STRING"] "/*/*.avi"
+			cmd= cmd " && ls -t " ENVIRON["QUERY_STRING"] "/*/*.avi"
 			while ((cmd | getline) > 0) print1(substr($0,10))
 		}
 	} else {
