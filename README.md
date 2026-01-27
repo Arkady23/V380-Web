@@ -16,7 +16,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 | Оборудование / Hwprefix | Модель / Hwname | Установщик / Installer |
 | --- | --- | --- |
 | Любая камера с telnet<br>Any camera with telnet | установка вручную<br>manual setup | [httpd_V380_any_manual.zip](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260127/httpd_V380_any_manual.zip) |
-| HW_HsAkQQWG_WIFI_COMM без telnet | KM01D_WF | [HW_HsAkQQWG_WIFI_COMM-setup.zip](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260127/KM01D_WF-setup.zip) |
+| HW_HsAkQQWG_WIFI_COMM без telnet | KM01D_WF | [KM01D_WF-setup.zip](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260127/KM01D_WF-setup.zip) |
 
 Ваша базовая прошивка может быть самой последней. Вся установка происходит на sd-карту. Если после установки очистить или вынуть sd, то камера будет работать в обычном режиме, как работала до установки.  
 ### Когда установка невозможна
