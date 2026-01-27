@@ -33,7 +33,7 @@ BEGIN {
   u1=substr(aq[1],5,1)
   u2=substr(aq[1],6,1)
   r2=substr(aq[1],7)
-  uv= u4>0? 0:1
+  uv=uw= u4>0? 0:1
   psk=aq[3]
 
   printf "Content-Type: text/html\r\n\r\n"
@@ -144,7 +144,7 @@ BEGIN {
 	av[FNR] = $0
 	if (nf>0) {
 		if (index(s0, "apps/log_")>0) {
-			if(func1(uv)) { av[FNR] = func0(uv); uv = -1 }
+			if(func1(uv)) { av[FNR] = func0(uv); uw = -1 }
 		}
 	}
   }
@@ -212,12 +212,8 @@ END {
 	}
 	print2()
   }
-  if(r1<0 || r2<0 || r3<0 || r4<0) {
-	for (i = 1; i <= nr; i++) print ar[i] > fr
-  }
-  if(uv<0) {
-	for (i = 1; i <= nv; i++) print av[i] > fv
-  }
+  if(r1<0 || r2<0 || r3<0 || r4<0) for (i = 1; i <= nr; i++) print ar[i] > fr
+  if(uw<0) for (i = 1; i <= nv; i++) print av[i] > fv
   if(u41 > 0) u4 = -1
   if(u51 >= 0) u5 = -1
   if(u1<0 || u2<0 || u3<0 || u4<0 || u5<0) {
