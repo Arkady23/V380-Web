@@ -25,8 +25,8 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 1. Отформатировать sd-карту в FAT32, например, используя программу Rufus в режиме незагрузочного диска. Некоторые новые sd-карты большого объема форматируются только в exFAT.
 2. Записать в корень карты содержимое архива в составе:
 <table><th>Для камер с telnet<th>Для камер без telnet
-<tr><td>&bull; ark-add-on<br>&bull; bin<br>&bull; quick_check.ini<br>&bull; setup.sh<br><td>&bull; ark-add-on<br>&bull; bin<br>&bull; updatepatch *<br>&bull; local_update.conf<br>&bull; patch_reuse
-<tr><td colspan=2> * В папке updatepatch приготовлен тот же setup.sh, только в виде патча
+<tr><td>&bull; ark-add-on<br>&bull; bin<br>&bull; quick_check.ini<br>&bull; setup.sh<br><br><td>&bull; ark-add-on<br>&bull; bin<br>&bull; updatepatch &sup1;<br>&bull; local_update.conf<br>&bull; patch_reuse
+<tr><td colspan=2> &sup1; В папке updatepatch приготовлен тот же setup.sh, только в виде патча
 </table>
 3. Вставить карту в камеру и включить её... ждать пару минут. Камера включется с запущенным сервером telnet (если камера с telnet). После чего нужно зайти через telnet по адресу камеры (логин root, пароль посмотреть в файле quick_check.ini).
 4. Ввести команду через telnet (этот пункт выполняется для тех камер, которые предоставляют telnet):<br>
