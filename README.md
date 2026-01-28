@@ -27,7 +27,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 
 | Камеры с telnet / Telnet cameras | Камеры без telnet / Cameras without telnet |  
 | --- | --- |  
-| ark-add-on | ark-add-on |  
+| - ark-add-on | - ark-add-on |  
 3. Вставить карту в камеру и включить её... ждать пару минут. Камера включется с запущенным сервером telnet. После чего нужно зайти через telnet по адресу камеры (логин root, пароль посмотреть в файле quick_check.ini).
 4. Ввести команду через telnet (этот пункт выполняется для тех камер, которые предоставляют telnet):<br>
     /mnt/sdcard/setup.sh
