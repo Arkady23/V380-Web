@@ -40,7 +40,7 @@ A large number of cameras running the V380 base software are currently appearing
 
 | For cameras with telnet | For cameras without telnet |
 | --- | --- |
-| &bull; ark-add-on<br>&bull; bin<br>&bull; quick_check.ini<br>&bull; setup.sh<br><br><br> | &bull; ark-add-on<br>&bull; bin<br>&bull; updatepatch<br>&bull; local_update.conf<br>&bull; patch_reuse |
+| &bull; ark-add-on<br>&bull; bin<br>&bull; quick_check.ini<br>&bull; setup.sh<br><br> | &bull; ark-add-on<br>&bull; bin<br>&bull; updatepatch<br>&bull; local_update.conf<br>&bull; patch_reuse |
 3. Insert the card into the camera and turn it on... wait a couple of minutes. The camera turns on with the telnet server running (if the camera is with telnet). After that, you need to log in via telnet to the camera address (login root, password look in the file quick_check.in).
 4. Enter command via telnet (this item is performed for those cameras that provide telnet):<br>
     /mnt/sdcard/setup.sh<br>
