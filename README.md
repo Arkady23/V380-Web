@@ -24,7 +24,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 ### Установка
 1. Отформатировать sd-карту в FAT32, например, используя программу Rufus в режиме незагрузочного диска. Некоторые новые sd-карты большого объема форматируются только в exFAT.
 2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260127/httpd_V380_any_manual.zip) в составе:  
-| Камеры с telnet / Telnet cameras | Камеры без telnet / Cameras without telnet |
+| Камеры с telnet / Telnet cameras | Камеры без telnet / Cameras without telnet |  
 | --- | --- |  
 | - ark-add-on | - ark-add-on |  
 | - bin | - bin |  
