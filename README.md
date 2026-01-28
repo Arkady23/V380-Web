@@ -27,10 +27,10 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 <table><thead><tr><th>Для камер с telnet<th>Для камер без telnet</thead>
 <tr><td>&bull; ark-add-on<br>&bull; bin<br>&bull; quick_check.ini<br>&bull; setup.sh<br><br><td>&bull; ark-add-on<br>&bull; bin<br>&bull; updatepatch &sup1;<br>&bull; local_update.conf<br>&bull; patch_reuse
 <tr><td colspan=2> &sup1; В папке updatepatch приготовлен тот же setup.sh, только в виде патча
-</table>
-3. Вставить карту в камеру и включить её... ждать пару минут. Камера включется с запущенным сервером telnet (если камера с telnet). После чего нужно зайти через telnet по адресу камеры (логин root, пароль посмотреть в файле quick_check.ini).
+</table>  
+3. Вставить карту в камеру и включить её... ждать пару минут. Камера включется с запущенным сервером telnet (если камера с telnet). После чего нужно зайти через telnet по адресу камеры (логин root, пароль посмотреть в файле quick_check.ini).  
 4. Ввести команду через telnet (этот пункт выполняется для тех камер, которые предоставляют telnet):<br>
-    /mnt/sdcard/setup.sh
+    /mnt/sdcard/setup.sh  
 5. Камера должна перезагрузится. После чего можно заходить с помощью обозревателя интернета на адрес камеры. 
 ### When installation is not possible
 A large number of cameras running the V380 base software are currently appearing. Recently, manufacturers have been blocking access to Telnet. In this case, you can still access the camera, but only if you manage to intercept the latest patch that might arrive via the internet. If the smartphone app notifies you of a new update, don't rush to install it. Try intercepting the traffic and getting a download link for your patch. Create a thread in the discussions or request pool and attach your patch for your camera. Then I can refine the web server installer for your camera, and other community members will be able to use it.
