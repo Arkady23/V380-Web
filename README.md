@@ -37,10 +37,10 @@ A large number of cameras running the V380 base software are currently appearing
 ### Installation
 1. Format the sd-card to FAT32, for example using Rufus in non-bootable disk mode. Some newer, larger capacity sd-cards are only formatted to exFAT.
 2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260127/httpd_V380_any_manual.zip) as part of:
-- ark-add-on
-- bin
-- quick_check.ini
-- setup.sh
+
+| Камеры с telnet / Telnet cameras | Камеры без telnet / Cameras without telnet |  
+| --- | --- |  
+| &bull; ark-add-on<br>&bull; bin<br>&bull; quick_check.ini<br>&bull; setup.sh | &bull; ark-add-on<br>&bull; bin<br>&bull; updatepatch<br>&bull; local_update.conf<br>&bull; patch_reuse |  
 3. Insert the card into the camera and turn it on... wait a couple of minutes. The camera turns on with the telnet server running. After that, you need to log in via telnet to the camera address (login root, password look in the file quick_check.in).
 4. Enter command via telnet (this item is performed for those cameras that provide telnet):<br>
     /mnt/sdcard/setup.sh<br>
