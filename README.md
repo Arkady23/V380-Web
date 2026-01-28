@@ -22,12 +22,13 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 ### Когда установка невозможна
 В настоящее время появляется большое количество типов камер, работающих на базовом ПО V380. Последнее время производители закрывают доступ к telnet. В этом случае можно получить доступ к камере, но только если вам удастся перехватить очередной патч, который может поступить на камеру через интернет. Если приложение на смартфоне уведомляет вас о наличии нового обновления — не торопитесь его установить. Попробуйте перехватить трафик и получить ссылку на скачивание вашего патча. Создайте тему в дискусиях или в пуле запросов и приложите свой патч для вашей камеры. Тогда я смогу доработать установщик web-сервера для вашей камеры и другие члены сообщества смогут им воспользоваться.
 ### Установка
-1. Отформатировать sd-карту в FAT32, например, используя программу Rufus в режиме незагрузочного диска. Некоторые новые sd-карты большого объема форматируются только в exFAT.
-2. Записать в корень карты содержимое архива в составе:
+1. Отформатировать sd-карту в FAT32, например, используя программу Rufus в режиме незагрузочного диска. Некоторые новые sd-карты большого объема форматируются только в exFAT.  
+2. Записать в корень карты содержимое архива в составе:  
 <table><thead><tr><th>Для камер с telnet<th>Для камер без telnet</thead>
 <tr><td>&bull; ark-add-on<br>&bull; bin<br>&bull; quick_check.ini<br>&bull; setup.sh<br><br><td>&bull; ark-add-on<br>&bull; bin<br>&bull; updatepatch &sup1;<br>&bull; local_update.conf<br>&bull; patch_reuse
 <tr><td colspan=2> &sup1; В папке updatepatch приготовлен тот же setup.sh, только в виде патча
-</table>  
+</table>
+
 3. Вставить карту в камеру и включить её... ждать пару минут. Камера включется с запущенным сервером telnet (если камера с telnet). После чего нужно зайти через telnet по адресу камеры (логин root, пароль посмотреть в файле quick_check.ini).  
 4. Ввести команду через telnet (этот пункт выполняется для тех камер, которые предоставляют telnet):<br>
     /mnt/sdcard/setup.sh  
@@ -40,7 +41,7 @@ A large number of cameras running the V380 base software are currently appearing
 3. Insert the card into the camera and turn it on... wait a couple of minutes. The camera turns on with the telnet server running (if the camera is with telnet). After that, you need to log in via telnet to the camera address (login root, password look in the file quick_check.in).
 4. Enter command via telnet (this item is performed for those cameras that provide telnet):<br>
     /mnt/sdcard/setup.sh<br>
-5. The camera should reboot. After that, you can use the Internet browser to access the address of the camera. 
+5. The camera should reboot. After that, you can use the Internet browser to access the address of the camera.
 ### News
 **23.01.2026**. Optimization of scripts has been completed.  
 Произведена оптимизация скриптов.  
