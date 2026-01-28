@@ -25,12 +25,6 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 1. Отформатировать sd-карту в FAT32, например, используя программу Rufus в режиме незагрузочного диска. Некоторые новые sd-карты большого объема форматируются только в exFAT.
 2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260127/httpd_V380_any_manual.zip) в составе:
 
-| Оборудование / Hwprefix | Модель / Hwname | Установщик / Installer |
-| --- | --- | --- |
-| Любая камера с telnet<br>Any camera with telnet | установка вручную<br>manual setup | [httpd_V380_any_manual.zip](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260127/httpd_V380_any_manual.zip) |
-| HW_HsAkQQWG_WIFI_COMM без telnet | KM01D_WF | [httpd_KM01D_WF-setup.zip](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260127/httpd_KM01D_WF-setup.zip) |
-
-
 | Камеры с telnet / Telnet cameras | Камеры без telnet / Cameras without telnet |  
 | --- | --- |  
 | ark-add-on | ark-add-on |  
