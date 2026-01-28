@@ -48,8 +48,8 @@ A large number of cameras running the V380 base software are currently appearing
     /mnt/sdcard/setup.sh<br>
 5. The camera should reboot. After that, you can use the Internet browser to access the address of the camera.
 ### News
-**27.01.2026**. A patch has been created for the dual-lens lightbulb camera HW_HsAkQQWG_WIFI_COMM_20221220 without telnet.  
-Создан патч для камеры-лампочки с двумя объективами HW_HsAkQQWG_WIFI_COMM_20221220 без telnet.  
+**27.01.2026**. A patch has been created for the dual-lens lightbulb camera HW_HsAkQQWG_WIFI_COMM_20221220 without telnet. Fixed one minor bug in the settsave.awk script.  
+Создан патч для камеры-лампочки с двумя объективами HW_HsAkQQWG_WIFI_COMM_20221220 без telnet. Исправлена одна незначительная ошибка в скрипте settsave.awk.  
 **23.01.2026**. Optimization of scripts has been completed.  
 Произведена оптимизация скриптов.  
 **18.01.2026**. A bug with the load.sh update download script has been fixed. Please replace this script in the cgi-bin folder on your sd-card, as only updates will be published in the future, not the initial installer. The script must be downloaded from [this page](https://github.com/Arkady23/V380-Web/blob/main/src/cgi-bin/load.sh). If you were able to replace this script, you can update the server from the [update_20260118.tar](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260118/update_20260118.tar) file on the camera settings page. Or simply reinstall the entire server from the [httpd_V380_any_manual.zip](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260118/httpd_V380_any_manual.zip) file from 01/18/2026.  
