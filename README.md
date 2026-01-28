@@ -26,8 +26,8 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260127/httpd_V380_any_manual.zip) в составе:
 
 | Для камер с telnet | Для камер без telnet |
-| --- | --- |  
-| &bull; ark-add-on<br>&bull; bin<br>&bull; quick_check.ini<br>&bull; setup.sh | &bull; ark-add-on<br>&bull; bin<br>&bull; updatepatch<br>&bull; local_update.conf<br>&bull; patch_reuse |  
+| --- | --- |
+| &bull; ark-add-on<br>&bull; bin<br>&bull; quick_check.ini<br>&bull; setup.sh | &bull; ark-add-on<br>&bull; bin<br>&bull; updatepatch<br>&bull; local_update.conf<br>&bull; patch_reuse |
 3. Вставить карту в камеру и включить её... ждать пару минут. Камера включется с запущенным сервером telnet. После чего нужно зайти через telnet по адресу камеры (логин root, пароль посмотреть в файле quick_check.ini).
 4. Ввести команду через telnet (этот пункт выполняется для тех камер, которые предоставляют telnet):<br>
     /mnt/sdcard/setup.sh
@@ -38,7 +38,7 @@ A large number of cameras running the V380 base software are currently appearing
 1. Format the sd-card to FAT32, for example using Rufus in non-bootable disk mode. Some newer, larger capacity sd-cards are only formatted to exFAT.
 2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260127/httpd_V380_any_manual.zip) as part of:
 
-| For cameras with telnet | For cameras without telnet |  
+| For cameras with telnet | For cameras without telnet |
 | --- | --- |
 | &bull; ark-add-on<br>&bull; bin<br>&bull; quick_check.ini<br>&bull; setup.sh | &bull; ark-add-on<br>&bull; bin<br>&bull; updatepatch<br>&bull; local_update.conf<br>&bull; patch_reuse |
 3. Insert the card into the camera and turn it on... wait a couple of minutes. The camera turns on with the telnet server running. After that, you need to log in via telnet to the camera address (login root, password look in the file quick_check.in).
