@@ -23,7 +23,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 В настоящее время появляется большое количество типов камер, работающих на базовом ПО V380. Последнее время производители закрывают доступ к telnet. В этом случае можно получить доступ к камере, но только если вам удастся перехватить очередной патч, который может поступить на камеру через интернет. Если приложение на смартфоне уведомляет вас о наличии нового обновления — не торопитесь его установить. Попробуйте перехватить трафик и получить ссылку на скачивание вашего патча. Создайте тему в дискусиях или в пуле запросов и приложите свой патч для вашей камеры. Тогда я смогу доработать установщик web-сервера для вашей камеры и другие члены сообщества смогут им воспользоваться.
 ### Установка
 1. Отформатировать sd-карту в FAT32, например, используя программу Rufus в режиме незагрузочного диска. Некоторые новые sd-карты большого объема форматируются только в exFAT.
-2. Записать в корень карты содержимое [архива](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260127/httpd_V380_any_manual.zip) в составе:
+2. Записать в корень карты содержимое архива в составе:
 
 | Для камер с telnet | Для камер без telnet |
 | --- | --- |
@@ -36,7 +36,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 A large number of cameras running the V380 base software are currently appearing. Recently, manufacturers have been blocking access to Telnet. In this case, you can still access the camera, but only if you manage to intercept the latest patch that might arrive via the internet. If the smartphone app notifies you of a new update, don't rush to install it. Try intercepting the traffic and getting a download link for your patch. Create a thread in the discussions or request pool and attach your patch for your camera. Then I can refine the web server installer for your camera, and other community members will be able to use it.
 ### Installation
 1. Format the sd-card to FAT32, for example using Rufus in non-bootable disk mode. Some newer, larger capacity sd-cards are only formatted to exFAT.
-2. Write to the root of the sd-card the contents of [the archive](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260127/httpd_V380_any_manual.zip) as part of:
+2. Write to the root of the sd-card the contents of the archive as part of:
 
 | For cameras with telnet | For cameras without telnet |
 | --- | --- |
