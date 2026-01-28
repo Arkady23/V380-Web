@@ -24,7 +24,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 ### Установка
 1. Отформатировать sd-карту в FAT32, например, используя программу Rufus в режиме незагрузочного диска. Некоторые новые sd-карты большого объема форматируются только в exFAT.
 2. Записать в корень карты содержимое архива в составе:
-<table><th>Для камер с telnet<th>Для камер без telnet
+<table><tr><th>Для камер с telnet<th>Для камер без telnet
 <tr><td>&bull; ark-add-on<br>&bull; bin<br>&bull; quick_check.ini<br>&bull; setup.sh<br><br><td>&bull; ark-add-on<br>&bull; bin<br>&bull; updatepatch &sup1;<br>&bull; local_update.conf<br>&bull; patch_reuse
 <tr><td colspan=2> &sup1; В папке updatepatch приготовлен тот же setup.sh, только в виде патча
 </table>
