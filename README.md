@@ -52,12 +52,10 @@ A large number of cameras running the V380 base software are currently appearing
 **28.02.2026**. Replaced sdcard/bin/busybox with all libraries to improve compatibility across different camera types. Also added initial installers for some cameras.  
 Заменен sdcard/bin/busybox со всеми библиотеками для повышения совместимости разных типов камер. Также добавлены начальные установщики для некоторых камер.  
 **27.01.2026**. A patch has been created for the dual-lens lightbulb camera HW_HsAkQQWG_WIFI_COMM_20221220 without telnet. Fixed one minor bug in the settsave.awk script.  
-
 Создан патч для камеры-лампочки с двумя объективами HW_HsAkQQWG_WIFI_COMM_20221220 без telnet. Исправлена одна незначительная ошибка в скрипте settsave.awk.  
 **23.01.2026**. Optimization of scripts has been completed.  
 Произведена оптимизация скриптов.  
 **18.01.2026**. A bug with the load.sh update download script has been fixed. Please replace this script in the cgi-bin folder on your sd-card, as only updates will be published in the future, not the initial installer. Otherwise, the January 18, 2026 version remains functionally unchanged, with the exception of a switch from the slow lot.sh function for searching data in text files to awk scripts, which perform this task much faster. After this update, the camera will respond somewhat more quickly to requests.  
-
 Исправлена ошибка скрипта загрузки обновлений load.sh. Пожалуйста замените этот скрипт на sd-карте в папке cgi-bin, т.к. в дальнейшем будут публиковаться только обновления, а не начальный установщик. В остальном версия от 18.01.2026 функционально не изменилась за исключением перехода с медленной функции lot.sh поиска даннык в текстовых файлах на скрипты awk, которые это делают значительно быстрее. После этого обновления камера будет несколько быстрее реагировать на запросы.  
 
 ![Просмотр основных настроек](screenshots/image_2022_08_21T23_12_43_133Z.png?raw=true)
