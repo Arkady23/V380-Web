@@ -37,7 +37,8 @@ else
 	cp -r cgi-bin /tmp
 	cp -r bin /tmp
 	cd /tmp/bin
-	if [[ -f busybox && -f lib && -f libc.so.0 && -f libm.so.0 ]]; then
+	if [[ -f busybox && -f gawk && -f libc.so.0 && -f libm.so.0 && -f lib && -f libdl.so.0 ]]
+        then
 		next > /mnt/mtd/reset.sh
 		sync
 		/mnt/mtd/reset.sh &

@@ -1,4 +1,4 @@
-#!/usr/bin/awk -f
+#!/mnt/sdcard/bin/gawk -f
 
 BEGIN {
 si=0;
