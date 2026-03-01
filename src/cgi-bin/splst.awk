@@ -109,6 +109,7 @@ END {
 	print1("\t</extension>")
 	print1("</playlist>")
   }
+  close(fl)
   printf "Content-Type: text/plain\r\n"
   printf "Content-Disposition: attachment; filename=\"" fn "\"\r\n"
   printf "Content-Length: " dl "\r\n\r\n"
