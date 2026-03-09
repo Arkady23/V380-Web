@@ -50,6 +50,8 @@ A large number of cameras running the V380 base software are currently appearing
     /mnt/sdcard/setup.sh<br>
 5. The camera should reboot. After that, you can use the Internet browser to access the address of the camera.
 ### News
+**09.03.2026**. Fixed bugs in some awk scripts.  
+Исправлены ошибки в некоторых скриптах awk.  
 **28.02.2026**. Replaced sdcard/bin/busybox with all libraries to improve compatibility across different camera types. Also added initial installers for some cameras.  
 Заменен sdcard/bin/busybox со всеми библиотеками для повышения совместимости разных типов камер. Также добавлены начальные установщики для некоторых камер.  
 **27.01.2026**. A patch has been created for the dual-lens lightbulb camera HW_HsAkQQWG_WIFI_COMM_20221220 without telnet. Fixed one minor bug in the settsave.awk script.  
