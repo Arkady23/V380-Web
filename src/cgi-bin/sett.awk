@@ -4,17 +4,16 @@ BEGIN {
   FS=";"
   port=80
   app="VLC"
-  ir="irfeed_lock_state"
   fr="/mnt/mtd/mvconf/record.ini"
   fs="/mnt/sdcard/ark-add-on/opts.ini"
   ft="/mnt/mtd/mvconf/factory_const.ini"
   fu="/mnt/sdcard/ark-add-on/startup.sh"
-  rtsp=tel=ftp=http=cp=rp=r1=r2=r3=r4=0
+  rtsp=tel=ftp=http=cp=rp=r1=r2=r3=r4=ir=0
   off=ssid=psk=lang=cs=""
   ARGV[ARGC]=ft; ARGC++
   ARGV[ARGC]=fu; ARGC++
-  ARGV[ARGC]=fs; ARGC++
   ARGV[ARGC]=fr; ARGC++
+  if ((getline < fs) > 0) { ARGV[ARGC]=fs; ARGC++ }
   wifi="\t\t"
 
   printf "Content-Type: text/html\r\n\r\n"
@@ -34,7 +33,7 @@ BEGIN {
 			cp=2; nextfile
 		} else {
 			if (substr(af[1],1,4) == "rtsp") rtsp = af[2]
-			else if (af[1] == ir) ir = af[2]
+			else if (af[1] == "irfeed_lock_state") ir = af[2]
 		}
 	} else if (cp == 0) {
 		if (af[1] == "[CONST_PARAM]") cp=1
@@ -46,10 +45,6 @@ BEGIN {
 	else if (index(s0, "httpd ")>0) http = func1() "\t" func2(port,4)
 	else if (index(s0, "/wifi.sh")>0) wifi = func1() "\t" func2(ssid,2) "\t" func2(psk,3)
   } else if(ARGIND == 3) {
-	if (af[1] == "lang") lang = af[2]
-	else if (af[1] == "cs") cs = af[2]
-	else if (af[1] == "app") app = af[2]
-  } else if(ARGIND == 4) {
 	if (rp == 1) {
 		if (substr(af[1],1,1) == "[") {
 				rp=2; nextfile
@@ -62,6 +57,10 @@ BEGIN {
 	} else if (rp == 0) {
 		if (af[1] == "[RECORDPARAM]") rp=1
 	}
+  } else if(ARGIND == 3) {
+	if (af[1] == "lang") lang = af[2]
+	else if (af[1] == "cs") cs = af[2]
+	else if (af[1] == "app") app = af[2]
   }
 }
 function func1() {

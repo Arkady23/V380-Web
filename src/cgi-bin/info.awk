@@ -96,5 +96,4 @@ END {
 		}
 	}
   }
-  close(cmd)
 }
