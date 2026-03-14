@@ -18,7 +18,7 @@ Web server for ip cameras V380. Russian and English interfaces are supported.
 | Любая камера с telnet<br>Any camera with telnet | установка вручную<br>manual setup | [httpd_V380_any_manual.zip](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260228/httpd_V380_any_manual.zip) |
 | HW_HsAkQQWG_WIFI_COMM без/without telnet | KM01D_WF | [httpd_KM01D_WF-setup.zip](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260228/httpd_KM01D_WF-setup.zip) |
 | Hw_HsAKPIQL_4G_XHR без/without telnet | V380E6_G1 | [httpd_V380E6_G1-setup.zip](https://github.com/Arkady23/V380-Web/releases/download/Initial-installer-20260228/httpd_V380E6_G1-setup.zip) |
-| Hw_EV2X_NA1_XHR_V1.0_WF без/without telnet | EV2X_NA1 |  |
+| Hw_EV2X_NA1_XHR_V1.0_WF без/without telnet | EV2X_NA1 | hwname подходит, но доступ к sd-карте получить пока не удается |
 
 Вся установка происходит на sd-карту. Если после установки очистить или вынуть sd, то камера будет работать в обычном режиме, как работала до установки.  
 ### Когда установка невозможна
